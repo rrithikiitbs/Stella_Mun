@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stella MUN 2027 | Official Website</title>
+<meta name="description" content="Stella MUN 2027 — Official Conference Website. Placeholder content, ready for your details.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #0A0C18;
+    --panel: #12152B;
+    --card: #171A36;
+    --ivory: #FBF8F1;
+    --ivory-deep: #1E2242;
+    --navy: #F1E9D6;
+    --navy-deep: #12162A;
+    --gold: #D9A84A;
+    --gold-soft: #F3CB7E;
+    --plum: #7C2C52;
+    --rose: #E8A4C9;
+    --ink: #E4DECF;
+    --ink-soft: rgba(228,222,207,0.62);
+    --line: rgba(241,232,214,0.14);
+    --line-deep: rgba(241,232,214,0.09);
+    --shadow: 0 25px 60px -25px rgba(0,0,0,0.6);
+    --radius: 2px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  h1,h2,h3,h4{ font-family:'Fraunces', serif; font-weight:450; color:var(--navy); margin:0; letter-spacing:-0.01em; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  button{ font-family:inherit; cursor:pointer; }
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:0.6em;
+    margin-bottom:1.1rem;
+  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background:var(--gold); display:inline-block; }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 3rem); }
+  section{ position:relative; }
+
+  /* ---------- Reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .reveal-stagger.is-visible .stagger-item{ opacity:1; transform:translateY(0); }
+  .stagger-item{ opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease; }
+
+  /* ================= NAV ================= */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    background:rgba(10,12,24,0.78);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid transparent;
+    transition:border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  header.nav.scrolled{ border-bottom-color:var(--line); box-shadow:0 8px 30px -20px rgba(27,35,64,0.3); }
+  .nav-inner{
+    max-width:1180px; margin:0 auto; padding:0.9rem clamp(1.25rem, 4vw, 3rem);
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{ display:flex; align-items:center; gap:0.55rem; font-family:'Fraunces', serif; font-size:1.05rem; color:var(--navy); }
+  .brand .mark{ width:9px; height:9px; background:var(--gold); border-radius:50%; box-shadow:0 0 0 3px rgba(184,145,43,0.18); }
+  .brand b{ font-weight:600; }
+  nav.links{ display:flex; gap:clamp(0.9rem, 2vw, 1.8rem); align-items:center; }
+  nav.links a{
+    font-size:0.82rem; letter-spacing:0.02em; color:var(--ink-soft); font-weight:500;
+    position:relative; padding:0.3rem 0; transition:color 0.2s ease;
+  }
+  nav.links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold);
+    transition:width 0.25s ease;
+  }
+  nav.links a:hover, nav.links a.active{ color:var(--navy); }
+  nav.links a:hover::after, nav.links a.active::after{ width:100%; }
+  .nav-cta{
+    background:transparent; border:1px solid var(--gold); color:var(--ivory) !important; padding:0.55rem 1.1rem; font-size:0.78rem;
+    border-radius:var(--radius); letter-spacing:0.03em; font-weight:600; white-space:nowrap;
+  }
+  .nav-cta::after{ display:none; }
+  .nav-cta:hover{ background:var(--gold); color:var(--navy-deep) !important; }
+
+  .menu-btn{ display:none; background:none; border:none; width:30px; height:22px; position:relative; }
+  .menu-btn span{ position:absolute; left:0; width:100%; height:1px; background:var(--navy); transition:0.3s; }
+  .menu-btn span:nth-child(1){ top:0; }
+  .menu-btn span:nth-child(2){ top:10px; }
+  .menu-btn span:nth-child(3){ top:20px; }
+  .menu-btn.open span:nth-child(1){ transform:translateY(10px) rotate(45deg); }
+  .menu-btn.open span:nth-child(2){ opacity:0; }
+  .menu-btn.open span:nth-child(3){ transform:translateY(-10px) rotate(-45deg); }
+
+  @media (max-width:900px){
+    nav.links{
+      position:fixed; inset:64px 0 0 0; background:var(--bg); flex-direction:column;
+      padding:2.5rem 1.5rem; gap:1.6rem; transform:translateX(100%); transition:transform 0.35s ease;
+      overflow-y:auto;
+    }
+    nav.links.open{ transform:translateX(0); }
+    nav.links a{ font-size:1.1rem; }
+    .menu-btn{ display:block; }
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    min-height:100vh; display:flex; flex-direction:column; justify-content:center;
+    padding-top:110px; padding-bottom:60px;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 8%, rgba(217,168,74,0.16), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 8% 4%, rgba(124,44,82,0.28), transparent 60%),
+      radial-gradient(ellipse 60% 60% at 50% 100%, rgba(232,164,201,0.08), transparent 65%),
+      var(--bg);
+    overflow:hidden;
+  }
+  #star-field{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  #star-field span{
+    position:absolute; background:var(--gold); border-radius:50%; opacity:0.5;
+    animation:twinkle 4.5s ease-in-out infinite;
+  }
+  @keyframes twinkle{ 0%,100%{ opacity:0.15; } 50%{ opacity:0.75; } }
+
+  /* ---------- Falling flower petals (ambient, whole-page) ---------- */
+  #flower-field{ position:fixed; inset:0; z-index:2; pointer-events:none; overflow:hidden; }
+  .petal{
+    position:absolute; top:-8vh; left:0; will-change:transform, opacity;
+    animation-name:petal-fall; animation-timing-function:linear; animation-iteration-count:infinite;
+  }
+  .petal svg{ display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25)); }
+  @keyframes petal-fall{
+    0%{ transform:translate3d(0,0,0) rotate(0deg); opacity:0; }
+    6%{ opacity:var(--pmax,0.5); }
+    88%{ opacity:var(--pmax,0.5); }
+    100%{ transform:translate3d(var(--sway,60px),118vh,0) rotate(var(--spin,320deg)); opacity:0; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .petal{ display:none; }
+  }
+
+  .hero-inner{ position:relative; z-index:2; }
+  .hero-kicker{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; letter-spacing:0.2em; color:var(--rose); text-transform:uppercase; margin-bottom:1.4rem; }
+  .hero h1{
+    font-size:clamp(3rem, 9vw, 6.6rem); line-height:0.94; font-weight:450; letter-spacing:-0.02em;
+  }
+  .hero h1 em{ font-style:italic; font-weight:350; color:var(--gold); }
+  .hero-sub{
+    max-width:560px; font-size:clamp(1.05rem,2vw,1.25rem); color:var(--ink-soft); margin-top:1.6rem;
+    font-family:'Fraunces', serif; font-style:italic; font-weight:400;
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.6rem; align-items:center; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:0.5rem; padding:0.95rem 1.8rem; font-size:0.85rem;
+    font-weight:600; letter-spacing:0.03em; border-radius:var(--radius); border:1px solid transparent;
+    transition:all 0.25s ease;
+  }
+  .btn-primary{ background:var(--gold); color:var(--navy-deep); }
+  .btn-primary:hover{ background:var(--gold-soft); color:var(--navy-deep); transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn-ghost{ border-color:var(--navy); color:var(--navy); }
+  .btn-ghost:hover{ background:var(--gold); border-color:var(--gold); color:var(--navy-deep); }
+  .btn-arrow{ transition:transform 0.2s ease; }
+  .btn:hover .btn-arrow{ transform:translateX(3px); }
+
+  .hero-meta{
+    display:grid; grid-template-columns:repeat(4,auto); gap:clamp(1.6rem,4vw,3.2rem);
+    margin-top:4.2rem; padding-top:2.2rem; border-top:1px solid var(--line); max-width:900px;
+  }
+  .hero-meta div b{ display:block; font-family:'Fraunces', serif; font-size:1.5rem; color:var(--navy); font-weight:500; }
+  .hero-meta div span{ font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); }
+  @media (max-width:760px){ .hero-meta{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ================= TICKER ================= */
+  .ticker-wrap{ background:var(--panel); overflow:hidden; padding:0.85rem 0; border-top:1px solid var(--line-deep); border-bottom:1px solid var(--line-deep); }
+  .ticker{ display:flex; white-space:nowrap; animation:scroll-left 32s linear infinite; width:max-content; }
+  .ticker-wrap:hover .ticker{ animation-play-state:paused; }
+  .ticker span{
+    font-family:'IBM Plex Mono', monospace; font-size:0.76rem; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--gold-soft); padding:0 1.6rem; display:flex; align-items:center; gap:1.6rem;
+  }
+  .ticker span::after{ content:'✦'; color:var(--rose); }
+  @keyframes scroll-left{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ================= SECTION GENERIC ================= */
+  .section{ padding:clamp(4.5rem,9vw,8rem) 0; }
+  .section-head{ max-width:680px; margin-bottom:3.2rem; }
+  .section-head h2{ font-size:clamp(2rem,4.2vw,3.1rem); line-height:1.08; }
+  .section-head h2 em{ font-style:italic; color:var(--gold); font-weight:400; }
+  .section-head p{ color:var(--ink-soft); margin-top:1.1rem; font-size:1.05rem; max-width:560px; }
+  .divider{ height:1px; background:var(--line); border:none; margin:0; }
+
+  /* ---------- About ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:3.5rem; align-items:start; }
+  .about-copy p{ color:var(--ink-soft); font-size:1.05rem; margin-bottom:1.1rem; }
+  .about-copy strong{ color:var(--navy); }
+  .stat-list{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+  .stat-card{
+    background:var(--card); border:1px solid var(--line); padding:1.6rem 1.4rem; border-radius:var(--radius);
+    transition:border-color 0.25s ease, transform 0.25s ease;
+  }
+  .stat-card:hover{ border-color:var(--gold); transform:translateY(-4px); }
+  .stat-card b{ font-family:'Fraunces', serif; font-size:2.1rem; color:var(--navy); font-weight:500; display:block; }
+  .stat-card span{ font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Committees / Constellation ---------- */
+  .committees-section{ background:var(--panel); color:var(--ink); }
+  .committees-section .eyebrow{ color:var(--gold-soft); }
+  .committees-section .eyebrow::before{ background:var(--gold-soft); }
+  .committees-section .section-head h2{ color:var(--ivory); }
+  .committees-section .section-head p{ color:rgba(250,247,240,0.65); }
+
+  .constellation-wrap{ display:grid; grid-template-columns:1.2fr 1fr; gap:2.5rem; align-items:center; }
+  #constellation-svg{ width:100%; height:auto; }
+  #constellation-svg .link{ stroke:rgba(228,200,96,0.28); stroke-width:1.4; fill:none; }
+  #constellation-svg .node-halo{ fill:rgba(228,200,96,0.08); }
+  #constellation-svg .node{ fill:var(--gold-soft); cursor:pointer; transition:r 0.2s ease, fill 0.2s ease; }
+  #constellation-svg .node:hover, #constellation-svg .node.active{ fill:#fff; }
+  #constellation-svg text.node-label{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; fill:rgba(250,247,240,0.55);
+    text-transform:uppercase; letter-spacing:0.05em; pointer-events:none;
+  }
+  #constellation-svg text.node-label.active{ fill:var(--gold-soft); }
+
+  .committee-detail{
+    background:rgba(250,247,240,0.05); border:1px solid var(--line-deep); border-radius:var(--radius);
+    padding:2rem; min-height:280px; display:flex; flex-direction:column; justify-content:center;
+    transition:opacity 0.25s ease;
+  }
+  .committee-detail .cd-num{ font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--gold-soft); letter-spacing:0.1em; margin-bottom:0.7rem; }
+  .committee-detail h3{ color:var(--ivory); font-size:1.7rem; margin-bottom:0.35rem; }
+  .committee-detail .cd-full{ font-family:'IBM Plex Mono', monospace; font-size:0.75rem; color:rgba(250,247,240,0.5); margin-bottom:1rem; letter-spacing:0.03em; }
+  .committee-detail .cd-agenda{ font-style:italic; font-family:'Fraunces', serif; color:var(--gold-soft); margin-bottom:0.9rem; font-size:1.05rem; }
+  .committee-detail p.cd-body{ color:rgba(250,247,240,0.72); font-size:0.95rem; margin-bottom:1.1rem; }
+  .cd-tags{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .cd-tags span{
+    font-family:'IBM Plex Mono', monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.06em;
+    border:1px solid rgba(228,200,96,0.35); color:var(--gold-soft); padding:0.3rem 0.65rem; border-radius:20px;
+  }
+
+  .committee-list-mobile{ display:none; margin-top:2rem; }
+  .clm-item{
+    padding:1rem 0; border-bottom:1px solid var(--line-deep); display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; color:rgba(250,247,240,0.85);
+  }
+  .clm-item.active{ color:var(--gold-soft); }
+  .clm-item span.clm-code{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; opacity:0.6; }
+
+  @media (max-width:900px){
+    .constellation-wrap{ grid-template-columns:1fr; }
+    #constellation-svg{ display:none; }
+    .committee-list-mobile{ display:block; }
+  }
+
+  /* ---------- Registration Phases ---------- */
+  .phases{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+  .phase-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:2rem 1.6rem;
+    position:relative; transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .phase-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+  .phase-card .pc-index{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--gold); letter-spacing:0.1em; margin-bottom:1.2rem; display:block; }
+  .phase-card h3{ font-size:1.4rem; margin-bottom:0.4rem; }
+  .phase-card .pc-price{ font-family:'Fraunces', serif; font-size:1.9rem; color:var(--rose); margin:0.6rem 0; }
+  .phase-card p{ color:var(--ink-soft); font-size:0.92rem; }
+  .pc-status{
+    display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.65rem; letter-spacing:0.08em;
+    text-transform:uppercase; padding:0.3rem 0.7rem; border-radius:20px; margin-top:1rem;
+  }
+  .pc-status.open{ background:rgba(184,145,43,0.14); color:var(--gold); }
+  .pc-status.closed{ background:rgba(91,93,104,0.12); color:var(--ink-soft); }
+  @media (max-width:860px){ .phases{ grid-template-columns:1fr; } }
+
+  /* ---------- Delegation categories ---------- */
+  .deleg-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .deleg-card{ padding:2.4rem 2rem; border-right:1px solid var(--line); }
+  .deleg-card:last-child{ border-right:none; }
+  .deleg-card .dc-icon{ width:34px; height:34px; margin-bottom:1.3rem; }
+  .deleg-card h3{ font-size:1.25rem; margin-bottom:0.6rem; }
+  .deleg-card p{ color:var(--ink-soft); font-size:0.92rem; }
+  @media (max-width:860px){ .deleg-grid{ grid-template-columns:1fr; } .deleg-card{ border-right:none; border-bottom:1px solid var(--line); } }
+
+  /* ---------- Itinerary tabs ---------- */
+  .tabs-head{ display:flex; gap:0.5rem; margin-bottom:2.2rem; border-bottom:1px solid var(--line); }
+  .tab-btn{
+    background:none; border:none; padding:0.9rem 0.3rem; margin-right:2rem; font-family:'Fraunces', serif;
+    font-size:1.1rem; color:var(--ink-soft); position:relative; border-bottom:2px solid transparent; margin-bottom:-1px;
+  }
+  .tab-btn.active{ color:var(--navy); border-bottom-color:var(--gold); }
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; }
+  .agenda-row{ display:grid; grid-template-columns:140px 1fr; gap:1.6rem; padding:1.4rem 0; border-bottom:1px solid var(--line); }
+  .agenda-row .ar-time{ font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--gold); }
+  .agenda-row h4{ font-size:1.05rem; margin-bottom:0.3rem; }
+  .agenda-row p{ color:var(--ink-soft); font-size:0.9rem; }
+  @media (max-width:640px){ .agenda-row{ grid-template-columns:1fr; gap:0.4rem; } }
+
+  /* ---------- Secretariat ---------- */
+  .team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.6rem; }
+  .team-card{ text-align:left; }
+  .team-photo{
+    aspect-ratio:1; background:linear-gradient(135deg, var(--card), var(--ivory-deep)); border:1px solid var(--line);
+    border-radius:var(--radius); display:flex; align-items:center; justify-content:center; margin-bottom:1rem;
+    font-family:'Fraunces', serif; font-size:2rem; color:var(--gold-soft); position:relative; overflow:hidden;
+  }
+  .team-photo::after{ content:'✦'; position:absolute; opacity:0.15; font-size:4rem; }
+  .team-card h4{ font-size:1rem; margin-bottom:0.15rem; }
+  .team-card span{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--ink-soft); letter-spacing:0.03em; }
+  @media (max-width:860px){ .team-grid{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ---------- Resources ---------- */
+  .resource-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+  .resource-card{
+    border:1px solid var(--line); padding:1.6rem; border-radius:var(--radius); background:var(--card);
+    transition:border-color 0.2s ease, transform 0.2s ease; display:block;
+  }
+  .resource-card:hover{ border-color:var(--gold); transform:translateY(-4px); }
+  .resource-card .rc-eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:0.7rem; display:block; }
+  .resource-card h4{ font-size:1.05rem; margin-bottom:0.4rem; }
+  .resource-card p{ color:var(--ink-soft); font-size:0.85rem; }
+  @media (max-width:860px){ .resource-grid{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ---------- FAQ / Policies ---------- */
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; padding:1.5rem 0; display:flex;
+    justify-content:space-between; align-items:center; font-family:'Fraunces', serif; font-size:1.15rem; color:var(--navy);
+  }
+  .faq-q .plus{ font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:1.2rem; transition:transform 0.25s ease; }
+  .faq-item.open .plus{ transform:rotate(45deg); }
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .faq-a-inner{ padding-bottom:1.6rem; color:var(--ink-soft); font-size:0.95rem; max-width:760px; }
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:var(--plum); color:var(--ivory); border-radius:var(--radius); padding:clamp(2.6rem,6vw,4.5rem);
+    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:2rem;
+  }
+  .cta-band h2{ color:var(--ivory); font-size:clamp(1.8rem,3.6vw,2.6rem); max-width:500px; }
+  .cta-band .btn-primary{ background:var(--ivory); color:var(--navy-deep); }
+  .cta-band .btn-primary:hover{ background:var(--gold-soft); }
+
+  /* ================= FOOTER ================= */
+  footer{ background:var(--navy-deep); color:rgba(250,247,240,0.7); padding:5rem 0 2rem; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:2.5rem; padding-bottom:3rem; border-bottom:1px solid var(--line-deep); }
+  .footer-brand h3{ color:var(--ivory); font-size:1.4rem; margin-bottom:0.8rem; }
+  .footer-brand p{ font-size:0.88rem; max-width:280px; color:rgba(250,247,240,0.55); }
+  .footer-col h5{ font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:1.1rem; }
+  .footer-col a, .footer-col p{ display:block; font-size:0.86rem; color:rgba(250,247,240,0.65); margin-bottom:0.7rem; }
+  .footer-col a:hover{ color:var(--gold-soft); }
+  .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.8rem; font-size:0.78rem; color:rgba(250,247,240,0.4); }
+  @media (max-width:860px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .footer-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Placeholder note badge ---------- */
+  .ph{ border-bottom:1px dashed var(--gold); cursor:help; }
+
+  /* Scroll to top */
+  #totop{
+    position:fixed; bottom:1.8rem; right:1.8rem; width:44px; height:44px; border-radius:50%;
+    background:var(--gold); color:var(--navy-deep); border:none; display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity 0.3s ease, transform 0.3s ease; z-index:150;
+  }
+  #totop.show{ opacity:1; pointer-events:auto; }
+  #totop:hover{ background:var(--gold-soft); color:var(--navy-deep); transform:translateY(-3px); }
+</style>
+</head>
+<body>
+
+<div id="star-field"></div>
+<div id="flower-field" aria-hidden="true"></div>
+
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="mark"></span> STELLA<b>&nbsp;MUN</b>&nbsp;2027</a>
+    <nav class="links" id="navLinks">
+      <a href="#about" data-nav>About</a>
+      <a href="#committees" data-nav>Committees</a>
+      <a href="#registration" data-nav>Register</a>
+      <a href="#itinerary" data-nav>Itinerary</a>
+      <a href="#secretariat" data-nav>Team</a>
+      <a href="#resources" data-nav>Resources</a>
+      <a href="#" class="nav-cta">Register Now</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-kicker">A Stella Maris Model United Nations Conference</div>
+      <h1>STELLA <em>MUN</em><br>2027</h1>
+      <p class="hero-sub">Every delegation begins as a single point of light. Six committees, one conference floor, and two days to prove where you stand.</p>
+      <div class="hero-actions">
+        <a href="#registration" class="btn btn-primary">Begin Registration <span class="btn-arrow">→</span></a>
+        <a href="#committees" class="btn btn-ghost">Explore Committees</a>
+      </div>
+      <div class="hero-meta">
+        <div><b class="ph" title="Placeholder — add final dates">Mar 2027</b><span>Conference Dates</span></div>
+        <div><b class="ph" title="Placeholder — add venue">Chennai</b><span>Venue TBA</span></div>
+        <div><b>6</b><span>Committees</span></div>
+        <div><b class="ph" title="Placeholder — add fee">₹ TBD</b><span>Registration Fee</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker-wrap">
+    <div class="ticker" id="tickerTrack"></div>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="eyebrow">About the Conference</div>
+          <h2 class="section-head" style="margin-bottom:1.6rem;">A stage for those who <em>speak first</em> and <em>listen better.</em></h2>
+          <div class="about-copy">
+            <p>Stella MUN is a student-run Model United Nations conference bringing together delegates from schools and colleges for two days of formal debate, crisis diplomacy, and resolution-writing. <strong>Stella MUN 2027</strong> continues that tradition with six committees spanning historical crisis, contemporary politics, economics, and international press.</p>
+            <p>This page is built and ready — every date, venue detail, fee, and committee below is a <span class="ph" title="Replace with your real conference details before launch">clearly marked placeholder</span> for your Secretariat to finalise.</p>
+          </div>
+        </div>
+        <div class="stat-list reveal">
+          <div class="stat-card"><b>350+</b><span>Delegates Expected</span></div>
+          <div class="stat-card"><b>6</b><span>Committees</span></div>
+          <div class="stat-card"><b>2</b><span>Days of Debate</span></div>
+          <div class="stat-card"><b>Est. 2026</b><span>Conference Founded</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ================= COMMITTEES ================= -->
+  <section class="section committees-section" id="committees">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Committees &amp; Agendas</div>
+        <h2>Six rooms. <em>One floor.</em></h2>
+        <p>Select a star on the map to view its committee. Agendas below are placeholders — swap in your finalised topics.</p>
+      </div>
+
+      <div class="constellation-wrap reveal">
+        <svg id="constellation-svg" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Committee constellation map">
+          <path class="link" d="M110,330 L240,170 L400,90 L520,90 L680,170 L800,330"></path>
+        </svg>
+        <div class="committee-detail" id="committeeDetail"></div>
+      </div>
+
+      <div class="committee-list-mobile" id="committeeListMobile"></div>
+    </div>
+  </section>
+
+  <!-- ================= REGISTRATION ================= -->
+  <section class="section" id="registration">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Registration Phases</div>
+        <h2>The road to <em>the floor.</em></h2>
+        <p>Three phases, rolling allotment. Update the copy, pricing, and dates below once your Secretariat confirms them.</p>
+      </div>
+      <div class="phases reveal-stagger" id="phasesGrid">
+        <div class="phase-card stagger-item">
+          <span class="pc-index">Phase 01</span>
+          <h3>Early Bird</h3>
+          <div class="pc-price">₹ TBD</div>
+          <p>A reservation window for delegates to indicate early interest and secure priority allotment consideration.</p>
+          <span class="pc-status closed">Opens Soon</span>
+        </div>
+        <div class="phase-card stagger-item">
+          <span class="pc-index">Phase 02</span>
+          <h3>General Registration</h3>
+          <div class="pc-price">₹ TBD</div>
+          <p>Open to all delegates. Allotments made on a rolling basis by committee preference and experience.</p>
+          <span class="pc-status closed">Opens Soon</span>
+        </div>
+        <div class="phase-card stagger-item">
+          <span class="pc-index">Phase 03</span>
+          <h3>Final Call</h3>
+          <div class="pc-price">₹ TBD</div>
+          <p>Last window before closing. Subject to seat availability across remaining committees.</p>
+          <span class="pc-status closed">Opens Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ================= DELEGATIONS ================= -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Delegations</div>
+        <h2>Bring your <em>institution.</em></h2>
+        <p>Three participation categories, mirroring how Stella MUN has always run — individual, institutional, and internal Stella Maris registration.</p>
+      </div>
+      <div class="deleg-grid reveal">
+        <div class="deleg-card">
+          <h3>Individual Delegate</h3>
+          <p>For delegates not affiliated with a delegation. Allotments based on committee preference, portfolio availability, and experience.</p>
+        </div>
+        <div class="deleg-card">
+          <h3>Institutional Delegation</h3>
+          <p>For schools and colleges registering as a group. A minimum delegation size and per-committee spread requirements apply — set your own below.</p>
+        </div>
+        <div class="deleg-card">
+          <h3>Internal (Stella Maris)</h3>
+          <p>A dedicated registration track for Stella Maris students, run alongside the external forms above.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ITINERARY ================= -->
+  <section class="section" id="itinerary">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Official Schedule</div>
+        <h2>Conference <em>itinerary.</em></h2>
+        <p>Two days on the floor. Fill in real timings once your Executive Board confirms the run of show.</p>
+      </div>
+      <div class="reveal">
+        <div class="tabs-head">
+          <button class="tab-btn active" data-tab="day1">Day 01</button>
+          <button class="tab-btn" data-tab="day2">Day 02</button>
+        </div>
+        <div class="tab-panel active" id="day1">
+          <div class="agenda-row"><span class="ar-time">8:00 – 8:30</span><div><h4>Opening Ceremony</h4><p>Welcome address, keynote, and formal introduction of committees.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">8:30 – 9:00</span><div><h4>Delegate Reporting</h4><p>Delegates report to committee rooms; verification and liability forms signed.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">9:00 – 12:00</span><div><h4>Committee Session I</h4><p>First formal session across all committees.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">12:00 – 2:00</span><div><h4>Staggered Lunch</h4><p>Rotating lunch slots by committee group.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">2:00 – 5:30</span><div><h4>Committee Sessions II &amp; III</h4><p>Working papers and draft resolutions developed.</p></div></div>
+        </div>
+        <div class="tab-panel" id="day2">
+          <div class="agenda-row"><span class="ar-time">8:00 – 10:00</span><div><h4>Committee Session IV</h4><p>Resolution drafting and formal debate continues.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">10:00 – 12:00</span><div><h4>Committee Session V</h4><p>Final amendments and merging of resolutions.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">12:00 – 2:00</span><div><h4>Staggered Lunch</h4><p>Rotating lunch slots by committee group.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">2:00 – 4:00</span><div><h4>Committee Session VI</h4><p>Voting procedures and passing of resolutions.</p></div></div>
+          <div class="agenda-row"><span class="ar-time">4:00 onwards</span><div><h4>Closing Ceremony &amp; Awards</h4><p>Recognition of Best Delegate, High Commendation, and Special Mention across all committees.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ================= SECRETARIAT ================= -->
+  <section class="section" id="secretariat">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Secretariat</div>
+        <h2>The team behind <em>the conference.</em></h2>
+        <p>Swap these placeholder cards for your Secretariat's names, roles, and contact details.</p>
+      </div>
+      <div class="team-grid reveal-stagger" id="teamGrid">
+        <div class="team-card stagger-item"><div class="team-photo">✦</div><h4>Name TBD</h4><span>Secretary-General</span></div>
+        <div class="team-card stagger-item"><div class="team-photo">✦</div><h4>Name TBD</h4><span>Deputy Secretary-General</span></div>
+        <div class="team-card stagger-item"><div class="team-photo">✦</div><h4>Name TBD</h4><span>Director General</span></div>
+        <div class="team-card stagger-item"><div class="team-photo">✦</div><h4>Name TBD</h4><span>Head of Delegate Affairs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESOURCES ================= -->
+  <section class="section" id="resources">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Official Documents</div>
+        <h2>Brochures &amp; <em>reference.</em></h2>
+        <p>Carried over from Stella MUN's usual resource set — link your real files once ready.</p>
+      </div>
+      <div class="resource-grid reveal-stagger">
+        <a href="#" class="resource-card stagger-item"><span class="rc-eyebrow">Document</span><h4>Delegate Handbook</h4><p>Conduct, procedure, and expectations for every delegate.</p></a>
+        <a href="#" class="resource-card stagger-item"><span class="rc-eyebrow">Document</span><h4>Conference Brochure</h4><p>Committees, schedule, and general information.</p></a>
+        <a href="#" class="resource-card stagger-item"><span class="rc-eyebrow">Reference</span><h4>Country Matrix</h4><p>Portfolio availability by committee — review before registering.</p></a>
+        <a href="#" class="resource-card stagger-item"><span class="rc-eyebrow">Reference</span><h4>Background Guides</h4><p>Agenda scope, bloc positions, and research directions.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ================= FAQ ================= -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Policies &amp; Guidelines</div>
+        <h2>Know before <em>you register.</em></h2>
+      </div>
+      <div id="faqList" class="reveal">
+        <div class="faq-item">
+          <button class="faq-q">Payment &amp; Refund Policy <span class="plus">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Registration fees are non-refundable once payment is confirmed. Allotted portfolios are personal and non-transferable. Replace with your finalised policy text.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Portfolio Allotment Policy <span class="plus">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Allotments are made on a rolling basis considering committee preference, portfolio availability, delegate experience, and Secretariat discretion.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Delegation Registration Process <span class="plus">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Head Delegates submit the Delegation Registration Form; all individual members must still register separately for allotment and communication records.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Dress Code &amp; Conduct <span class="plus">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Day 1 — Formals. Day 2 — Western Formals. All delegates are expected to follow the conference code of conduct at all times.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <h2>One last chance to take the floor.</h2>
+        <a href="#registration" class="btn btn-primary">Register Now <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>STELLA MUN 2027</h3>
+        <p>A student-run Model United Nations conference. Every delegate begins as a single point of light.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <a href="#registration">Register</a>
+        <a href="#committees">Committees</a>
+        <a href="#itinerary">Itinerary</a>
+        <a href="#resources">Brochures</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>Secretary-General — TBD</p>
+        <p>Email — hello@stellamun.example</p>
+      </div>
+      <div class="footer-col">
+        <h5>Follow</h5>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">WhatsApp Group</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2027 Stella Model United Nations. All rights reserved.</span>
+      <span>Placeholder content — replace before launch.</span>
+    </div>
+  </div>
+</footer>
+
+<button id="totop" aria-label="Scroll to top">↑</button>
+
+<script>
+(function(){
+  // ---------- Star field ----------
+  var field = document.getElementById('star-field');
+  var n = window.innerWidth < 700 ? 35 : 70;
+  for(var i=0;i<n;i++){
+    var s = document.createElement('span');
+    var size = Math.random()*2.4+1;
+    s.style.width = size+'px';
+    s.style.height = size+'px';
+    s.style.left = Math.random()*100+'%';
+    s.style.top = Math.random()*100+'%';
+    s.style.animationDelay = (Math.random()*4.5)+'s';
+    s.style.animationDuration = (3+Math.random()*3)+'s';
+    field.appendChild(s);
+  }
+
+  // ---------- Falling flower petals ----------
+  var flowerField = document.getElementById('flower-field');
+  var petalColors = [
+    { petal:'#E8A4C9', center:'#F3CB7E' }, // rose bloom, gold center
+    { petal:'#D9A84A', center:'#7C2C52' }, // gold bloom, plum center
+    { petal:'#C97AA8', center:'#F1E9D6' }, // deeper rose, ivory center
+    { petal:'#F3CB7E', center:'#7C2C52' }  // soft gold, plum center
+  ];
+  function makeFlowerSVG(petalColor, centerColor, size){
+    var petals = '';
+    for (var k = 0; k < 5; k++){
+      var angle = k * 72;
+      petals += '<ellipse cx="0" cy="-6" rx="4.2" ry="7.5" fill="'+petalColor+'" transform="rotate('+angle+')"></ellipse>';
+    }
+    return '<svg width="'+size+'" height="'+size+'" viewBox="-14 -14 28 28" xmlns="http://www.w3.org/2000/svg">' +
+           '<g>'+petals+'</g>' +
+           '<circle cx="0" cy="0" r="3.4" fill="'+centerColor+'"></circle>' +
+           '</svg>';
+  }
+  var petalCount = window.innerWidth < 700 ? 12 : 22;
+  for (var p = 0; p < petalCount; p++){
+    var wrap = document.createElement('div');
+    wrap.className = 'petal';
+    var palette = petalColors[p % petalColors.length];
+    var size = 14 + Math.random()*16;
+    wrap.innerHTML = makeFlowerSVG(palette.petal, palette.center, Math.round(size));
+    var left = Math.random()*100;
+    var duration = 16 + Math.random()*16;
+    var delay = -1 * Math.random()*30;
+    var sway = (Math.random()*140 - 70).toFixed(0) + 'px';
+    var spin = (Math.random() > 0.5 ? 1 : -1) * (240 + Math.random()*220);
+    var maxOpacity = (0.28 + Math.random()*0.32).toFixed(2);
+    wrap.style.left = left + '%';
+    wrap.style.animationDuration = duration + 's';
+    wrap.style.animationDelay = delay + 's';
+    wrap.style.setProperty('--sway', sway);
+    wrap.style.setProperty('--spin', spin.toFixed(0) + 'deg');
+    wrap.style.setProperty('--pmax', maxOpacity);
+    flowerField.appendChild(wrap);
+  }
+
+  // ---------- Nav scroll state ----------
+  var header = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('totop').classList.toggle('show', window.scrollY > 700);
+  });
+
+  // ---------- Mobile menu ----------
+  var menuBtn = document.getElementById('menuBtn');
+  var navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', function(){
+    menuBtn.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menuBtn.classList.remove('open'); navLinks.classList.remove('open'); });
+  });
+
+  // ---------- Scrollspy ----------
+  var navItems = document.querySelectorAll('[data-nav]');
+  var sections = Array.prototype.map.call(navItems, function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        navItems.forEach(function(a){ a.classList.remove('active'); });
+        var match = document.querySelector('[data-nav][href="#'+entry.target.id+'"]');
+        if(match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin:'-45% 0px -50% 0px' });
+  sections.forEach(function(s){ spy.observe(s); });
+
+  // ---------- Reveal on scroll ----------
+  var reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  var ro = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); ro.unobserve(e.target); } });
+  }, { threshold:0.15 });
+  reveals.forEach(function(r){ ro.observe(r); });
+
+  // ---------- Scroll to top ----------
+  document.getElementById('totop').addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+
+  // ---------- Ticker ----------
+  var tickerItems = [
+    'STELLA MUN 2027', 'REGISTRATIONS OPENING SOON', 'SIX COMMITTEES', 'CHENNAI, INDIA',
+    'EVERY DELEGATE IS A STAR', 'TWO DAYS OF DEBATE'
+  ];
+  var track = document.getElementById('tickerTrack');
+  var html = '';
+  for(var r=0;r<2;r++){ tickerItems.forEach(function(t){ html += '<span>'+t+'</span>'; }); }
+  track.innerHTML = html;
+
+  // ---------- Committees data ----------
+  var committees = [
+    { code:'UNSC', name:'United Nations Security Council', agenda:'Agenda to be announced', body:'The Council convenes to address a matter of international peace and security. Placeholder — set the real crisis or topic here.', tags:['Contemporary','High Stakes'], x:110, y:330 },
+    { code:'UNHRC', name:'UN Human Rights Council', agenda:'Agenda to be announced', body:'Delegates deliberate on a pressing human rights situation, balancing sovereignty against humanitarian obligation.', tags:['Human Rights','Contemporary'], x:240, y:170 },
+    { code:'HCC', name:'Historical Crisis Committee', agenda:'Freeze date to be announced', body:'A single-room crisis set at a defining historical turning point. Committee name and freeze date are placeholders.', tags:['Crisis','Historical'], x:400, y:90 },
+    { code:'NPR', name:'National Policy Roundtable', agenda:'Agenda to be announced', body:'A contemporary policy body bringing together government, industry, and civil-society stakeholders on a national issue.', tags:['Policy','Contemporary'], x:520, y:90 },
+    { code:'ECOFIN', name:'Economic &amp; Financial Committee', agenda:'Agenda to be announced', body:'Delegates negotiate global economic policy and sustainable development finance.', tags:['Economics','Development'], x:680, y:170 },
+    { code:'IPC', name:'International Press Corps', agenda:'Journalism &amp; Photojournalism', body:'Press delegates report on and visually document committee proceedings across the conference floor.', tags:['Press','Journalism'], x:800, y:330 }
+  ];
+
+  var svg = document.getElementById('constellation-svg');
+  var detail = document.getElementById('committeeDetail');
+  var listMobile = document.getElementById('committeeListMobile');
+  var svgns = 'http://www.w3.org/2000/svg';
+
+  committees.forEach(function(c, idx){
+    var halo = document.createElementNS(svgns,'circle');
+    halo.setAttribute('class','node-halo'); halo.setAttribute('cx',c.x); halo.setAttribute('cy',c.y); halo.setAttribute('r',18);
+    svg.appendChild(halo);
+
+    var node = document.createElementNS(svgns,'circle');
+    node.setAttribute('class','node'); node.setAttribute('cx',c.x); node.setAttribute('cy',c.y); node.setAttribute('r',6);
+    node.setAttribute('data-idx', idx);
+    node.addEventListener('click', function(){ selectCommittee(idx); });
+    svg.appendChild(node);
+
+    var label = document.createElementNS(svgns,'text');
+    label.setAttribute('class','node-label'); label.setAttribute('x', c.x); label.setAttribute('y', c.y - 24);
+    label.setAttribute('text-anchor','middle'); label.setAttribute('data-idx', idx);
+    label.textContent = c.code;
+    svg.appendChild(label);
+
+    var li = document.createElement('div');
+    li.className = 'clm-item'; li.setAttribute('data-idx', idx);
+    li.innerHTML = '<span>'+c.name+'</span><span class="clm-code">'+c.code+'</span>';
+    li.addEventListener('click', function(){ selectCommittee(idx); });
+    listMobile.appendChild(li);
+  });
+
+  function selectCommittee(idx){
+    var c = committees[idx];
+    svg.querySelectorAll('.node').forEach(function(n){ n.classList.toggle('active', +n.getAttribute('data-idx') === idx); });
+    svg.querySelectorAll('.node-label').forEach(function(n){ n.classList.toggle('active', +n.getAttribute('data-idx') === idx); });
+    listMobile.querySelectorAll('.clm-item').forEach(function(n){ n.classList.toggle('active', +n.getAttribute('data-idx') === idx); });
+
+    detail.style.opacity = 0;
+    setTimeout(function(){
+      detail.innerHTML =
+        '<div class="cd-num">Committee 0'+(idx+1)+' / 06</div>'+
+        '<h3>'+c.code+'</h3>'+
+        '<div class="cd-full">'+c.name+'</div>'+
+        '<div class="cd-agenda">'+c.agenda+'</div>'+
+        '<p class="cd-body">'+c.body+'</p>'+
+        '<div class="cd-tags">'+c.tags.map(function(t){ return '<span>'+t+'</span>'; }).join('')+'</div>';
+      detail.style.opacity = 1;
+    }, 150);
+  }
+  selectCommittee(0);
+
+  // ---------- Tabs ----------
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabBtns.forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+
+  // ---------- FAQ accordion ----------
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
