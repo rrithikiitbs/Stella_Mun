@@ -1,0 +1,18 @@
+/* Shared interaction language: antique gold, never a permanent glow. */
+.artwork-frame{clip-path:polygon(0 0,100% 0,100% 94%,94% 100%,0 100%)}
+.cinema-hero-content{animation:cinema-copy-in .9s cubic-bezier(.2,.7,.2,1) both}
+.cinema-hero-art{animation:cinema-art-in 1.3s cubic-bezier(.2,.7,.2,1) both}
+.page-opener-content{animation:cinema-copy-in .8s .08s cubic-bezier(.2,.7,.2,1) both}
+@keyframes cinema-copy-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cinema-art-in{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:translateX(0)}}
+button:not(:disabled):hover,a:hover,[role="button"]:hover{color:var(--champagne)}
+a:hover:not(.button){text-shadow:0 0 22px #d8bd8850}
+.artwork-frame:hover{box-shadow:0 0 34px #d8bd8838}
+.event-art-link:hover,.forum-link:hover{box-shadow:0 0 30px #d8bd8845,0 12px 32px #10091b36}
+.event-preview:hover,.notice-ribbon a:hover{color:var(--champagne);text-shadow:0 0 18px #d8bd883b}
+.archive-download:hover,.button:hover,.desktop-nav>a.active{box-shadow:0 0 25px #d8bd8845}
+button:not(:disabled):active,.button:active{transform:translateY(1px) scale(.99)}
+button:disabled,.button-disabled{cursor:not-allowed;filter:saturate(.45)}
+input:hover,textarea:hover,select:hover{border-color:#d8bd8890!important;box-shadow:0 0 16px #d8bd881c}
+.nav-identity:hover,.footer-brand:hover{filter:drop-shadow(0 0 14px #d8bd8855)}
+@media(hover:none){a:hover:not(.button){text-shadow:none}.artwork-frame:hover,.event-art-link:hover,.forum-link:hover{box-shadow:none}.artwork-frame:hover .artwork-image,.event-art-link:hover .event-photo,.forum-link:hover .forum-photo{transform:none;filter:none}}

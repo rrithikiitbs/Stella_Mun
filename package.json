@@ -1,0 +1,8 @@
+{
+  "name": "stella-maris-mun-2027",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"dev":"next dev","build":"next build","start":"next start","lint":"next lint","test":"node --test","optimize:artwork":"node scripts/optimize-artwork.mjs"},
+  "dependencies": {"@supabase/ssr":"^0.6.1","@supabase/supabase-js":"^2.49.1","framer-motion":"^12.4.7","lucide-react":"^0.468.0","next":"^15.2.0","react":"^19.0.0","react-dom":"^19.0.0","zod":"^3.24.2"},
+  "devDependencies": {"@tailwindcss/postcss":"^4.0.11","@types/node":"^22.13.10","@types/react":"^19.0.10","@types/react-dom":"^19.0.4","sharp":"^0.35.5","tailwindcss":"^4.0.11","typescript":"^5.8.2"}
+}

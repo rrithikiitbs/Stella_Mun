@@ -1,0 +1,759 @@
+{
+  "sourceCount": 19,
+  "sourceBytes": 23145691,
+  "outputBytes": 5482550,
+  "desktopBytes": {
+    "avif": 993577,
+    "webp": 1892564
+  },
+  "formats": {
+    "avif": 57,
+    "webp": 57
+  },
+  "files": [
+    {
+      "source": "architecture/assembly_hall.png",
+      "sourceBytes": 1229491,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "architecture/assembly_hall-480.avif",
+          "width": 480,
+          "bytes": 20513
+        },
+        {
+          "file": "architecture/assembly_hall-480.webp",
+          "width": 480,
+          "bytes": 40540
+        },
+        {
+          "file": "architecture/assembly_hall-768.avif",
+          "width": 768,
+          "bytes": 47615
+        },
+        {
+          "file": "architecture/assembly_hall-768.webp",
+          "width": 768,
+          "bytes": 95846
+        },
+        {
+          "file": "architecture/assembly_hall-1024.avif",
+          "width": 1024,
+          "bytes": 82313
+        },
+        {
+          "file": "architecture/assembly_hall-1024.webp",
+          "width": 1024,
+          "bytes": 165440
+        }
+      ]
+    },
+    {
+      "source": "architecture/greek_arch.png",
+      "sourceBytes": 1589342,
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "architecture/greek_arch-480.avif",
+          "width": 480,
+          "bytes": 16767
+        },
+        {
+          "file": "architecture/greek_arch-480.webp",
+          "width": 480,
+          "bytes": 31122
+        },
+        {
+          "file": "architecture/greek_arch-768.avif",
+          "width": 768,
+          "bytes": 37488
+        },
+        {
+          "file": "architecture/greek_arch-768.webp",
+          "width": 768,
+          "bytes": 68196
+        },
+        {
+          "file": "architecture/greek_arch-1024.avif",
+          "width": 1024,
+          "bytes": 57825
+        },
+        {
+          "file": "architecture/greek_arch-1024.webp",
+          "width": 1024,
+          "bytes": 110342
+        }
+      ]
+    },
+    {
+      "source": "architecture/Greek_Sculptural_relief.png",
+      "sourceBytes": 1608635,
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "architecture/Greek_Sculptural_relief-480.avif",
+          "width": 480,
+          "bytes": 20529
+        },
+        {
+          "file": "architecture/Greek_Sculptural_relief-480.webp",
+          "width": 480,
+          "bytes": 37814
+        },
+        {
+          "file": "architecture/Greek_Sculptural_relief-768.avif",
+          "width": 768,
+          "bytes": 41584
+        },
+        {
+          "file": "architecture/Greek_Sculptural_relief-768.webp",
+          "width": 768,
+          "bytes": 80940
+        },
+        {
+          "file": "architecture/Greek_Sculptural_relief-1024.avif",
+          "width": 1024,
+          "bytes": 64793
+        },
+        {
+          "file": "architecture/Greek_Sculptural_relief-1024.webp",
+          "width": 1024,
+          "bytes": 126876
+        }
+      ]
+    },
+    {
+      "source": "architecture/Ornate_greek_column.png",
+      "sourceBytes": 1650979,
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "architecture/Ornate_greek_column-480.avif",
+          "width": 480,
+          "bytes": 19988
+        },
+        {
+          "file": "architecture/Ornate_greek_column-480.webp",
+          "width": 480,
+          "bytes": 37414
+        },
+        {
+          "file": "architecture/Ornate_greek_column-768.avif",
+          "width": 768,
+          "bytes": 40336
+        },
+        {
+          "file": "architecture/Ornate_greek_column-768.webp",
+          "width": 768,
+          "bytes": 78276
+        },
+        {
+          "file": "architecture/Ornate_greek_column-1024.avif",
+          "width": 1024,
+          "bytes": 62264
+        },
+        {
+          "file": "architecture/Ornate_greek_column-1024.webp",
+          "width": 1024,
+          "bytes": 125598
+        }
+      ]
+    },
+    {
+      "source": "architecture/staircase.png",
+      "sourceBytes": 1124758,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "architecture/staircase-480.avif",
+          "width": 480,
+          "bytes": 19481
+        },
+        {
+          "file": "architecture/staircase-480.webp",
+          "width": 480,
+          "bytes": 36272
+        },
+        {
+          "file": "architecture/staircase-768.avif",
+          "width": 768,
+          "bytes": 43672
+        },
+        {
+          "file": "architecture/staircase-768.webp",
+          "width": 768,
+          "bytes": 81314
+        },
+        {
+          "file": "architecture/staircase-1024.avif",
+          "width": 1024,
+          "bytes": 71866
+        },
+        {
+          "file": "architecture/staircase-1024.webp",
+          "width": 1024,
+          "bytes": 134918
+        }
+      ]
+    },
+    {
+      "source": "committees/aippm.png",
+      "sourceBytes": 1042862,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "committees/aippm-480.avif",
+          "width": 480,
+          "bytes": 13622
+        },
+        {
+          "file": "committees/aippm-480.webp",
+          "width": 480,
+          "bytes": 25026
+        },
+        {
+          "file": "committees/aippm-768.avif",
+          "width": 768,
+          "bytes": 31197
+        },
+        {
+          "file": "committees/aippm-768.webp",
+          "width": 768,
+          "bytes": 58880
+        },
+        {
+          "file": "committees/aippm-1024.avif",
+          "width": 1024,
+          "bytes": 53428
+        },
+        {
+          "file": "committees/aippm-1024.webp",
+          "width": 1024,
+          "bytes": 101290
+        }
+      ]
+    },
+    {
+      "source": "committees/international-press.png",
+      "sourceBytes": 935600,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "committees/international-press-480.avif",
+          "width": 480,
+          "bytes": 10372
+        },
+        {
+          "file": "committees/international-press-480.webp",
+          "width": 480,
+          "bytes": 18590
+        },
+        {
+          "file": "committees/international-press-768.avif",
+          "width": 768,
+          "bytes": 23351
+        },
+        {
+          "file": "committees/international-press-768.webp",
+          "width": 768,
+          "bytes": 42994
+        },
+        {
+          "file": "committees/international-press-1024.avif",
+          "width": 1024,
+          "bytes": 39144
+        },
+        {
+          "file": "committees/international-press-1024.webp",
+          "width": 1024,
+          "bytes": 72442
+        }
+      ]
+    },
+    {
+      "source": "committees/planning-commission.png",
+      "sourceBytes": 1003186,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "committees/planning-commission-480.avif",
+          "width": 480,
+          "bytes": 11548
+        },
+        {
+          "file": "committees/planning-commission-480.webp",
+          "width": 480,
+          "bytes": 22702
+        },
+        {
+          "file": "committees/planning-commission-768.avif",
+          "width": 768,
+          "bytes": 26553
+        },
+        {
+          "file": "committees/planning-commission-768.webp",
+          "width": 768,
+          "bytes": 51448
+        },
+        {
+          "file": "committees/planning-commission-1024.avif",
+          "width": 1024,
+          "bytes": 45661
+        },
+        {
+          "file": "committees/planning-commission-1024.webp",
+          "width": 1024,
+          "bytes": 84982
+        }
+      ]
+    },
+    {
+      "source": "committees/reykjavik-summit.png",
+      "sourceBytes": 994822,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "committees/reykjavik-summit-480.avif",
+          "width": 480,
+          "bytes": 11890
+        },
+        {
+          "file": "committees/reykjavik-summit-480.webp",
+          "width": 480,
+          "bytes": 21824
+        },
+        {
+          "file": "committees/reykjavik-summit-768.avif",
+          "width": 768,
+          "bytes": 27511
+        },
+        {
+          "file": "committees/reykjavik-summit-768.webp",
+          "width": 768,
+          "bytes": 49210
+        },
+        {
+          "file": "committees/reykjavik-summit-1024.avif",
+          "width": 1024,
+          "bytes": 45941
+        },
+        {
+          "file": "committees/reykjavik-summit-1024.webp",
+          "width": 1024,
+          "bytes": 83370
+        }
+      ]
+    },
+    {
+      "source": "committees/unga.png",
+      "sourceBytes": 1219510,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "committees/unga-480.avif",
+          "width": 480,
+          "bytes": 20192
+        },
+        {
+          "file": "committees/unga-480.webp",
+          "width": 480,
+          "bytes": 40926
+        },
+        {
+          "file": "committees/unga-768.avif",
+          "width": 768,
+          "bytes": 46443
+        },
+        {
+          "file": "committees/unga-768.webp",
+          "width": 768,
+          "bytes": 95364
+        },
+        {
+          "file": "committees/unga-1024.avif",
+          "width": 1024,
+          "bytes": 79372
+        },
+        {
+          "file": "committees/unga-1024.webp",
+          "width": 1024,
+          "bytes": 162086
+        }
+      ]
+    },
+    {
+      "source": "committees/unhrc.png",
+      "sourceBytes": 956321,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "committees/unhrc-480.avif",
+          "width": 480,
+          "bytes": 11376
+        },
+        {
+          "file": "committees/unhrc-480.webp",
+          "width": 480,
+          "bytes": 20802
+        },
+        {
+          "file": "committees/unhrc-768.avif",
+          "width": 768,
+          "bytes": 25303
+        },
+        {
+          "file": "committees/unhrc-768.webp",
+          "width": 768,
+          "bytes": 46404
+        },
+        {
+          "file": "committees/unhrc-1024.avif",
+          "width": 1024,
+          "bytes": 41340
+        },
+        {
+          "file": "committees/unhrc-1024.webp",
+          "width": 1024,
+          "bytes": 75444
+        }
+      ]
+    },
+    {
+      "source": "hero/hero-alternative.png",
+      "sourceBytes": 881073,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "hero/hero-alternative-480.avif",
+          "width": 480,
+          "bytes": 8848
+        },
+        {
+          "file": "hero/hero-alternative-480.webp",
+          "width": 480,
+          "bytes": 15760
+        },
+        {
+          "file": "hero/hero-alternative-768.avif",
+          "width": 768,
+          "bytes": 19729
+        },
+        {
+          "file": "hero/hero-alternative-768.webp",
+          "width": 768,
+          "bytes": 36290
+        },
+        {
+          "file": "hero/hero-alternative-1024.avif",
+          "width": 1024,
+          "bytes": 32974
+        },
+        {
+          "file": "hero/hero-alternative-1024.webp",
+          "width": 1024,
+          "bytes": 60144
+        }
+      ]
+    },
+    {
+      "source": "hero/hero-main.png",
+      "sourceBytes": 812369,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "hero/hero-main-480.avif",
+          "width": 480,
+          "bytes": 8396
+        },
+        {
+          "file": "hero/hero-main-480.webp",
+          "width": 480,
+          "bytes": 15564
+        },
+        {
+          "file": "hero/hero-main-768.avif",
+          "width": 768,
+          "bytes": 17048
+        },
+        {
+          "file": "hero/hero-main-768.webp",
+          "width": 768,
+          "bytes": 31958
+        },
+        {
+          "file": "hero/hero-main-1024.avif",
+          "width": 1024,
+          "bytes": 25928
+        },
+        {
+          "file": "hero/hero-main-1024.webp",
+          "width": 1024,
+          "bytes": 47634
+        }
+      ]
+    },
+    {
+      "source": "hero/marble_eye_and_face.png",
+      "sourceBytes": 1659714,
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "hero/marble_eye_and_face-480.avif",
+          "width": 480,
+          "bytes": 20900
+        },
+        {
+          "file": "hero/marble_eye_and_face-480.webp",
+          "width": 480,
+          "bytes": 37554
+        },
+        {
+          "file": "hero/marble_eye_and_face-768.avif",
+          "width": 768,
+          "bytes": 44517
+        },
+        {
+          "file": "hero/marble_eye_and_face-768.webp",
+          "width": 768,
+          "bytes": 78388
+        },
+        {
+          "file": "hero/marble_eye_and_face-1024.avif",
+          "width": 1024,
+          "bytes": 69760
+        },
+        {
+          "file": "hero/marble_eye_and_face-1024.webp",
+          "width": 1024,
+          "bytes": 124170
+        }
+      ]
+    },
+    {
+      "source": "ornaments/goldgreek_laurel_wreath.png",
+      "sourceBytes": 1708139,
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "ornaments/goldgreek_laurel_wreath-480.avif",
+          "width": 480,
+          "bytes": 24687
+        },
+        {
+          "file": "ornaments/goldgreek_laurel_wreath-480.webp",
+          "width": 480,
+          "bytes": 46908
+        },
+        {
+          "file": "ornaments/goldgreek_laurel_wreath-768.avif",
+          "width": 768,
+          "bytes": 48142
+        },
+        {
+          "file": "ornaments/goldgreek_laurel_wreath-768.webp",
+          "width": 768,
+          "bytes": 93398
+        },
+        {
+          "file": "ornaments/goldgreek_laurel_wreath-1024.avif",
+          "width": 1024,
+          "bytes": 71753
+        },
+        {
+          "file": "ornaments/goldgreek_laurel_wreath-1024.webp",
+          "width": 1024,
+          "bytes": 143334
+        }
+      ]
+    },
+    {
+      "source": "ornaments/marbled_hand.png",
+      "sourceBytes": 1337121,
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "ornaments/marbled_hand-480.avif",
+          "width": 480,
+          "bytes": 8664
+        },
+        {
+          "file": "ornaments/marbled_hand-480.webp",
+          "width": 480,
+          "bytes": 14308
+        },
+        {
+          "file": "ornaments/marbled_hand-768.avif",
+          "width": 768,
+          "bytes": 17311
+        },
+        {
+          "file": "ornaments/marbled_hand-768.webp",
+          "width": 768,
+          "bytes": 28434
+        },
+        {
+          "file": "ornaments/marbled_hand-1024.avif",
+          "width": 1024,
+          "bytes": 26658
+        },
+        {
+          "file": "ornaments/marbled_hand-1024.webp",
+          "width": 1024,
+          "bytes": 44910
+        }
+      ]
+    },
+    {
+      "source": "ornaments/wing_sculpture.png",
+      "sourceBytes": 1578319,
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "ornaments/wing_sculpture-480.avif",
+          "width": 480,
+          "bytes": 16297
+        },
+        {
+          "file": "ornaments/wing_sculpture-480.webp",
+          "width": 480,
+          "bytes": 29358
+        },
+        {
+          "file": "ornaments/wing_sculpture-768.avif",
+          "width": 768,
+          "bytes": 32363
+        },
+        {
+          "file": "ornaments/wing_sculpture-768.webp",
+          "width": 768,
+          "bytes": 60288
+        },
+        {
+          "file": "ornaments/wing_sculpture-1024.avif",
+          "width": 1024,
+          "bytes": 48523
+        },
+        {
+          "file": "ornaments/wing_sculpture-1024.webp",
+          "width": 1024,
+          "bytes": 94642
+        }
+      ]
+    },
+    {
+      "source": "sculptures/portrait.png",
+      "sourceBytes": 890309,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "sculptures/portrait-480.avif",
+          "width": 480,
+          "bytes": 11441
+        },
+        {
+          "file": "sculptures/portrait-480.webp",
+          "width": 480,
+          "bytes": 21646
+        },
+        {
+          "file": "sculptures/portrait-768.avif",
+          "width": 768,
+          "bytes": 23469
+        },
+        {
+          "file": "sculptures/portrait-768.webp",
+          "width": 768,
+          "bytes": 43372
+        },
+        {
+          "file": "sculptures/portrait-1024.avif",
+          "width": 1024,
+          "bytes": 36636
+        },
+        {
+          "file": "sculptures/portrait-1024.webp",
+          "width": 1024,
+          "bytes": 65818
+        }
+      ]
+    },
+    {
+      "source": "sculptures/winged_figure.png",
+      "sourceBytes": 923141,
+      "width": 1024,
+      "height": 572,
+      "hasAlpha": false,
+      "outputs": [
+        {
+          "file": "sculptures/winged_figure-480.avif",
+          "width": 480,
+          "bytes": 10179
+        },
+        {
+          "file": "sculptures/winged_figure-480.webp",
+          "width": 480,
+          "bytes": 18254
+        },
+        {
+          "file": "sculptures/winged_figure-768.avif",
+          "width": 768,
+          "bytes": 22635
+        },
+        {
+          "file": "sculptures/winged_figure-768.webp",
+          "width": 768,
+          "bytes": 41068
+        },
+        {
+          "file": "sculptures/winged_figure-1024.avif",
+          "width": 1024,
+          "bytes": 37398
+        },
+        {
+          "file": "sculptures/winged_figure-1024.webp",
+          "width": 1024,
+          "bytes": 69124
+        }
+      ]
+    }
+  ],
+  "outputCount": 114,
+  "desktopAvifReductionPercent": 95.7,
+  "desktopWebpReductionPercent": 91.8
+}
