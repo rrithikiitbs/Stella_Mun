@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./home.css";
 import { Shell, RegisterButton } from "@/components/site";
 import { Artwork } from "@/components/artwork";
 import { Reveal } from "@/components/reveal";
@@ -12,63 +13,49 @@ export default async function Home() {
   const [committees, site, announcements, events] = await Promise.all([
     getCommittees(), getSettings(), getPublished("announcements"), getPublished("events"),
   ]);
-  const words = String(site.hero_title || "STELLA MARIS").trim().split(/\s+/);
-  const lead = words.shift() || "STELLA";
-  const second = words.join(" ") || "MARIS";
 
-  return <Shell><main>
-    <section className="cinema-hero">
-      <div className="cinema-hero-glow" aria-hidden="true" />
-      <div className="cinema-hero-art"><Artwork name="hero" priority ratio="16 / 10" sizes="(max-width: 760px) 100vw, 68vw" className="hero-artwork-frame" imageClassName="hero-artwork-image" /></div>
-      <div className="hero-architecture-line" aria-hidden="true" />
-      <div className="wrap cinema-hero-content">
-        <p className="eyebrow hero-kicker">Stella Maris College <span>·</span> Chennai, India</p>
-        <h1 className="cinema-title"><span>{lead}</span><em>{second}</em></h1>
-        <div className="hero-edition"><span>MODEL UNITED NATIONS</span><b>2027</b></div>
-        <div className="hero-event-meta"><span>29—30 January 2027</span><i /> <span>Chennai, India</span></div>
-        <p className="hero-tagline">{site.hero_subtitle || fallbackSettings.tagline}</p>
-        <div className="hero-actions"><Link className="button button-outline" href="/committees">Explore the committees <span>↗</span></Link><RegisterButton className="button-gold"/></div>
+  return <Shell><main className="home-world">
+    <section className="world-hero" id="top">
+      <div className="world-hero-art"><Artwork name="heroAlternative" priority ratio="16 / 9" sizes="100vw" position="right center" className="world-hero-artwork" imageClassName="world-hero-image" /></div>
+      <div className="world-hero-atmosphere" aria-hidden="true"><span className="world-orbit orbit-one"/><span className="world-orbit orbit-two"/><span className="world-light-column"/><span className="world-grid-floor"/></div>
+      <div className="world-hero-frame" aria-hidden="true"/>
+      <div className="world-hero-content">
+        <p className="world-kicker"><span/> STELLA MARIS COLLEGE <i>·</i> CHENNAI, INDIA</p>
+        <p className="world-overline">A world of diplomacy</p>
+        <h1><span>STELLA MARIS</span><em>MUN / 27</em></h1>
+        <div className="world-title-signature"><span>MODEL UNITED NATIONS</span><b>CHENNAI · INDIA</b></div>
+        <p className="world-tagline">{site.hero_subtitle || fallbackSettings.tagline}</p>
+        <div className="world-actions"><Link className="world-explore" href="/committees"><span>Explore committees</span><b>↗</b></Link><RegisterButton className="world-register"/></div>
       </div>
-      <div className="hero-scroll-note"><span /> SCROLL TO EXPLORE</div>
-      <div className="hero-number" aria-hidden="true">01 <span>/ 27</span></div>
+      <div className="world-hero-orientation"><span>29—30 JANUARY 2027</span><i/><span>13°04′ N · 80°16′ E</span></div>
+      <div className="world-hero-index" aria-hidden="true">01 <span>— 27</span></div>
+      <a className="world-scroll" href="#conference"><span className="world-scroll-line"/> ENTER THE CONFERENCE</a>
     </section>
 
-    {announcements.length > 0 && <section className="notice-ribbon"><div className="wrap notice-ribbon-inner"><span className="eyebrow">From the secretariat</span><div>{announcements.slice(0, 2).map(item => <Link href={item.external_url || "/events"} key={item.id}><strong>{item.title}</strong><span>{item.description}</span><b>↗</b></Link>)}</div></div></section>}
+    {announcements.length > 0 && <section className="world-bulletin" aria-label="Secretariat announcements"><div className="world-bulletin-label"><span className="world-live-dot"/> SECRETARIAT SIGNAL</div><div className="world-bulletin-items">{announcements.slice(0, 2).map((item, index) => <Link href={item.external_url || "/events"} key={item.id}><span>0{index + 1}</span><strong>{item.title}</strong><i>↗</i></Link>)}</div></section>}
 
-    <section className="editorial-intro">
-      <div className="wrap intro-grid">
-        <Reveal className="intro-copy"><p className="eyebrow eyebrow-dark">A meeting of minds, made monumental</p><h2 className="display-heading">The world<br/><i>at the table.</i></h2><div className="gold-rule"/><p className="editorial-lead">Stella Maris Model United Nations brings students together for two days of diplomacy, dialogue and ideas that move beyond borders.</p><Link href="/about" className="editorial-link">Discover the conference <span>↗</span></Link></Reveal>
-        <Reveal className="intro-visual" delay={0.12}><div className="intro-image-wrap"><Artwork name="assembly" ratio="1 / 1.12" sizes="(max-width: 760px) 100vw, 48vw" className="intro-artwork"/><div className="image-caption"><span>THE ASSEMBLY</span><b>01 — A place for every voice</b></div></div><div className="intro-side-note">DIPLOMACY · HISTORY · TOMORROW</div></Reveal>
+    <section className="world-introduction" id="conference">
+      <div className="world-intro-atmosphere" aria-hidden="true"/>
+      <div className="world-intro-grid">
+        <Reveal className="world-intro-copy"><p className="world-section-index">01 <span>/ THE GATHERING</span></p><p className="world-eyebrow">A forum for the next generation</p><h2>Many voices.<br/><i>One shared future.</i></h2><p className="world-intro-description">Stella Maris Model United Nations brings students together for two days of diplomacy, dialogue and ideas that move beyond borders.</p><Link href="/about" className="world-text-link">The story of Stella Maris MUN <span>↗</span></Link></Reveal>
+        <Reveal className="world-intro-scene" delay={0.12}><div className="world-assembly-image"><Artwork name="assembly" ratio="1 / 1.05" sizes="(max-width: 760px) 88vw, 48vw" className="world-assembly-art"/><div className="world-glass-caption"><span>AN OPEN CHAMBER</span><b>Every perspective has a place.</b></div></div><div className="world-image-orbit" aria-hidden="true">DIALOGUE <i>·</i> RESEARCH <i>·</i> RESOLUTION</div></Reveal>
       </div>
-      <div className="intro-bottom-rule" />
+      <div className="world-data-ribbon"><div><span>CONVENED</span><b>29—30 <i>January</i> 2027</b></div><div><span>HOSTED AT</span><b>Stella Maris <i>College</i></b></div><div><span>IN THE CITY OF</span><b>Chennai, <i>India</i></b></div></div>
     </section>
 
-    <section className="conference-ledger"><div className="wrap ledger-grid"><div><small>THE CONFERENCE</small><strong>02</strong></div><div><small>WHEN</small><strong>29—30 <em>Jan</em> 2027</strong></div><div><small>WHERE</small><strong>Stella Maris <em>College</em></strong></div><div><small>THE CITY</small><strong>Chennai, <em>India</em></strong></div></div></section>
-
-    {committees.length > 0 && <section className="committee-exhibition">
-      <div className="wrap exhibition-head"><div><p className="eyebrow">Six forums · one world</p><h2 className="display-heading">Enter the <i>chamber.</i></h2></div><Link className="editorial-link" href="/committees">All committees <span>↗</span></Link></div>
-      <div className="wrap committee-mosaic">{committees.map((committee, index) => <Reveal key={committee.slug} className={`committee-exhibit exhibit-${index + 1}`} delay={index * 0.045} y={16}>
-        <Link href={`/committees/${committee.slug}`} className="committee-art-link">
-          <Artwork name={committeeArtwork[committee.slug] || "assembly"} ratio={index === 0 ? "1 / 1.18" : "1 / 1"} sizes="(max-width: 700px) 92vw, (max-width: 1050px) 45vw, 32vw" className="committee-exhibit-art" imageClassName="committee-exhibit-image" />
-          <span className="exhibit-index">0{index + 1} <i>/ 06</i></span><span className="exhibit-discover">Discover forum <b>↗</b></span>
-          <div className="exhibit-caption"><p>{committee.abbreviation || committee.short}</p><h3>{committee.full_name || committee.name}</h3><span>{committee.description}</span></div>
-        </Link>
-      </Reveal>)}</div>
-      <div className="mosaic-footnote"><span>THE ART OF DIALOGUE</span><span>CHENNAI · 2027</span></div>
+    {committees.length > 0 && <section className="world-committees" id="committees">
+      <div className="world-committee-heading"><div><p className="world-section-index">02 <span>/ THE FORUMS</span></p><p className="world-eyebrow">Six rooms, six perspectives</p><h2>Enter the<br/><i>conversation.</i></h2></div><Link href="/committees" className="world-text-link">Discover all committees <span>↗</span></Link></div>
+      <div className="world-forum-stage"><div className="world-forum-list">{committees.slice(0, 6).map((committee, index) => <Link href={`/committees/${committee.slug}`} className={`world-forum-row forum-row-${index + 1}`} key={committee.slug}><span className="world-forum-index">0{index + 1}</span><span className="world-forum-name"><small>{committee.abbreviation || committee.short}</small><strong>{committee.full_name || committee.name}</strong></span><span className="world-forum-arrow">↗</span></Link>)}</div><div className="world-forum-art"><Artwork name={committeeArtwork[committees[0].slug] || "assembly"} ratio="4 / 5" sizes="(max-width: 760px) 88vw, 38vw" className="world-forum-artwork"/><span className="world-forum-stamp">DIPLOMACY<br/>IN SESSION</span><span className="world-forum-art-caption">THE DELEGATE’S VIEW · 2027</span></div></div>
     </section>}
 
-    <section className="story-spread">
-      <div className="story-image"><Artwork name="relief" ratio="16 / 10" sizes="(max-width: 760px) 100vw, 60vw" className="story-artwork"/></div>
-      <div className="story-copy"><Reveal><p className="eyebrow">A tradition of thoughtful exchange</p><h2 className="display-heading">Ideas become<br/><i>history.</i></h2><p>{site.about_content || "Model United Nations invites students to research complex questions, listen to diverse perspectives and work toward thoughtful outcomes. At Stella Maris, the next generation takes its place in a long conversation about our shared future."}</p><Link className="button button-outline" href="/about">Our purpose <span>↗</span></Link></Reveal><Artwork name="laurel" ratio="1 / 1" className="story-laurel" decorative/></div>
+    <section className="world-programme">
+      <div className="world-programme-art"><Artwork name="staircase" ratio="16 / 9" sizes="100vw" className="world-staircase-art" decorative/></div><div className="world-programme-shade" aria-hidden="true"/>
+      <div className="world-programme-content"><p className="world-section-index">03 <span>/ THE PROGRAMME</span></p><p className="world-eyebrow">Two days of ideas in motion</p><h2>The work begins<br/><i>with a question.</i></h2><p>From opening session to final resolution, every moment brings a new perspective into focus.</p><Link href="/schedule" className="world-glass-link">Explore the programme <span>↗</span></Link></div>
+      <div className="world-programme-date"><span>29—30</span><i>JANUARY</i><b>2027</b></div>
     </section>
 
-    <section className="events-exhibition">
-      <div className="events-backdrop"><Artwork name="staircase" ratio="16 / 9" sizes="100vw" className="events-backdrop-art" decorative/></div>
-      <div className="wrap events-inner"><div className="events-title"><p className="eyebrow">Beyond the committee room</p><h2 className="display-heading">The gathering<br/><i>continues.</i></h2><Link href="/events" className="editorial-link">Explore events <span>↗</span></Link></div>
-        <div className="event-preview-list">{events.length ? events.slice(0, 3).map((event, i) => <Link href="/events" className="event-preview" key={event.id}><span>0{i + 1}</span><div><small>{event.status || "CONFERENCE EVENT"}</small><h3>{event.title}</h3><p>{event.description}</p></div><b>↗</b></Link>) : <div className="event-preview coming"><span>✦</span><div><small>29—30 JANUARY 2027</small><h3>New moments await.</h3><p>Workshops, special sessions and delegate activities will be announced here.</p></div></div>}</div>
-      </div>
-    </section>
+    <section className="world-events"><div className="world-events-head"><div><p className="world-section-index">04 <span>/ AROUND THE ASSEMBLY</span></p><p className="world-eyebrow">Beyond the committee room</p><h2>The gathering<br/><i>continues.</i></h2></div><Link href="/events" className="world-text-link">All conference events <span>↗</span></Link></div><div className="world-event-lines">{events.length ? events.slice(0, 3).map((event, index) => <Link href="/events" className="world-event-line" key={event.id}><span>0{index + 1}</span><div><small>{event.status || "CONFERENCE EVENT"}</small><h3>{event.title}</h3><p>{event.description}</p></div><b>↗</b></Link>) : <div className="world-event-empty"><span>29—30 JANUARY 2027</span><p>Workshops, special sessions and delegate activities will be announced here.</p><strong>New moments await.</strong></div>}</div></section>
 
-    <section className="home-closer"><div className="wrap closer-inner"><Artwork name="wingOrnament" ratio="1 / 1" className="closer-ornament" decorative/><p className="eyebrow">Your voice belongs in the room</p><h2 className="display-heading">Take your place<br/><i>at the table.</i></h2><p>Two days. Six forums. A world of ideas.</p><RegisterButton className="button-gold"/><Link href="/schedule" className="editorial-link">View the conference programme <span>↗</span></Link></div></section>
+    <section className="world-closing"><div className="world-closing-light" aria-hidden="true"/><Artwork name="wingOrnament" ratio="1 / 1" className="world-closing-ornament" decorative/><div className="world-closing-content"><p className="world-eyebrow">Your voice belongs in the room</p><h2>Take your place<br/><i>in the world.</i></h2><p>Two days. Six forums. A world of ideas.</p><RegisterButton className="world-register"/><Link href="/delegates" className="world-closing-secondary">For delegates <span>↗</span></Link></div><span className="world-closing-coordinate">STELLA MARIS MUN <i>·</i> CHENNAI <i>·</i> MMXXVII</span></section>
   </main></Shell>;
 }

@@ -12,9 +12,11 @@ export const getSettings = cache(async () => {
 export const getCommittees = cache(async () => {
   const supabase = await createClient();
   if (!supabase) return fallbackCommittees.map(c => ({ ...c, id: null, background_guide_document_id: null, full_name: c.name, abbreviation: c.short, theme: null, agenda_description: null, historical_context: null, scope_of_discussion: null, key_issues: null }));
-  const visibility = await getSectionVisibility();
+  const [visibility, { data, error }] = await Promise.all([
+    getSectionVisibility(),
+    supabase.from("committees").select("*").eq("is_published", true).eq("is_visible", true).order("display_order"),
+  ]);
   if (visibility.committees === false) return [];
-  const { data, error } = await supabase.from("committees").select("*").eq("is_published", true).eq("is_visible", true).order("display_order");
   return error ? fallbackCommittees.map(c => ({ ...c, id: null, background_guide_document_id: null, full_name: c.name, abbreviation: c.short, theme: null, agenda_description: null, historical_context: null, scope_of_discussion: null, key_issues: null })) : data ?? [];
 });
 
@@ -22,11 +24,10 @@ export async function getPublished(table: "announcements" | "events" | "schedule
   const supabase = await createClient();
   if (!supabase) return [];
   const section = table === "documents" ? "resources" : table === "schedule_entries" ? "schedule" : table === "secretariat_members" ? "secretariat" : table;
-  const visibility = await getSectionVisibility();
-  if (visibility[section] === false) return [];
   const query = supabase.from(table).select("*").eq("is_published", true).eq("is_visible", true);
   const ordered = table === "documents" ? query.order("uploaded_at", { ascending: false }) : table === "announcements" ? query.order("published_at", { ascending: false, nullsFirst: false }) : query.order("display_order", { ascending: true });
-  const { data, error } = await ordered.limit(100);
+  const [visibility, { data, error }] = await Promise.all([getSectionVisibility(), ordered.limit(100)]);
+  if (visibility[section] === false) return [];
   return error ? [] : data ?? [];
 }
 
