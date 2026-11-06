@@ -1,0 +1,79 @@
+/* Public-facing architectural finish. All selectors are tied to the public Shell/pages. */
+body:has(.museum-nav){--patina:#987743;--champagne:#e2cf9e;--glass-edge:rgba(236,218,174,.44)}
+.museum-nav{isolation:isolate!important;overflow:hidden;border:1px solid var(--glass-edge)!important;border-radius:4px 17px 4px 17px!important;background:linear-gradient(112deg,rgba(246,237,221,.16),rgba(67,42,77,.57) 40%,rgba(26,16,37,.76))!important;backdrop-filter:blur(26px) saturate(145%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.34),inset 0 -1px 0 rgba(173,136,74,.3),0 18px 48px rgba(5,3,9,.35),0 0 30px rgba(169,132,79,.1)!important;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease,top .35s ease!important}
+.museum-nav:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(105deg,rgba(255,255,255,.18),transparent 20% 73%,rgba(228,204,154,.1)),linear-gradient(180deg,rgba(255,255,255,.08),transparent 42%);opacity:.85}
+.museum-nav:after{content:"";position:absolute;left:4%;right:4%;bottom:0;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(237,216,169,.7),rgba(255,255,255,.5),rgba(198,157,82,.7),transparent)}
+.museum-nav.is-scrolled{border-color:rgba(216,190,132,.62)!important;background:linear-gradient(105deg,rgba(39,25,49,.91),rgba(27,17,38,.9) 64%,rgba(61,43,67,.86))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 16px 44px rgba(5,3,9,.44),0 0 28px rgba(172,133,76,.12)!important}
+.museum-nav .desktop-nav>a:not(.button){position:relative;color:rgba(250,245,235,.83);transition:color .25s ease,text-shadow .25s ease}
+.museum-nav .desktop-nav>a:not(.button):after{content:"";position:absolute;left:50%;right:50%;bottom:-9px;height:1px;background:linear-gradient(90deg,#94703b,#f1db9e,#a77d40);transition:left .25s ease,right .25s ease}
+.museum-nav .desktop-nav>a:not(.button):hover,.museum-nav .desktop-nav>a.active{color:#f0d99f;text-shadow:0 0 16px rgba(218,183,109,.36)}
+.museum-nav .desktop-nav>a.active:after,.museum-nav .desktop-nav>a:not(.button):hover:after{left:14%;right:14%}
+.museum-nav .desktop-nav>a:focus-visible,.museum-nav button:focus-visible,.mobile-nav a:focus-visible{outline:2px solid #f0d99f;outline-offset:4px;border-radius:3px}
+.museum-nav .nav-register{border-color:#c1a36a!important;background:linear-gradient(135deg,#d4bc84,#a7834a 58%,#80633e)!important;color:#21172a!important;box-shadow:inset 0 1px rgba(255,255,255,.58),0 4px 14px rgba(8,5,12,.28)!important}
+.mobile-nav{border:1px solid rgba(220,194,135,.58)!important;background:linear-gradient(150deg,rgba(51,34,62,.97),rgba(24,16,34,.98))!important;backdrop-filter:blur(24px) saturate(140%);box-shadow:inset 0 1px rgba(255,255,255,.14),0 24px 70px #05030ab3!important}
+.mobile-nav>a.active{color:#ecd49a!important;border-color:rgba(220,194,135,.5)!important;background:linear-gradient(90deg,rgba(219,191,128,.16),transparent)!important}
+
+/* A shared marble and plum atmosphere gives page transitions a continuous horizon. */
+.home-world,.about-page,.committees-page,.committee-detail-page,.events-page,.itinerary-page,.resources-page,.secretariat-page,.delegates-page,.contact-page,.not-found-page{position:relative;isolation:isolate}
+.home-world:before,.about-page:before,.committee-detail-page:before,.events-page:before,.resources-page:before,.delegates-page:before,.contact-page:before,.not-found-page:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0,rgba(150,115,162,.2),transparent 39%),radial-gradient(ellipse at 13% 40%,rgba(199,165,107,.08),transparent 28%),linear-gradient(180deg,rgba(21,13,31,.14),transparent 23%,rgba(234,226,211,.035) 55%,rgba(21,13,31,.12));}
+.home-world>section{position:relative}
+.world-hero{background:radial-gradient(ellipse at 73% 42%,rgba(117,87,130,.33),transparent 46%),linear-gradient(115deg,#130d1c,#22162d 61%,#191020)!important}
+.world-hero:before{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:radial-gradient(ellipse at 67% 48%,transparent 20%,rgba(12,8,18,.17) 70%),linear-gradient(0deg,#130d1c 0%,transparent 20% 72%,rgba(12,8,18,.3));mix-blend-mode:multiply}
+.world-hero-art{filter:drop-shadow(-28px 20px 36px rgba(5,3,8,.24))}
+.world-hero-art .artwork-frame{mask-image:linear-gradient(90deg,transparent 0%,#000 27%,#000 90%,transparent 100%);}
+.world-hero .world-hero-image{filter:brightness(.87) saturate(.77) contrast(1.08)!important}
+.world-hero-frame:before{inset:13px!important;border:1px solid rgba(218,190,135,.46)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.world-hero-frame:after{inset:27px!important;border-color:rgba(230,214,180,.17)!important}
+.world-introduction{background:radial-gradient(ellipse at 75% 10%,rgba(117,87,130,.24),transparent 36%),linear-gradient(180deg,#191120 0%,#30223a 22%,#d7caba 56%,#f0e9dd 86%,#21172a 100%)!important}
+.world-intro-copy,.world-intro-copy h2,.world-intro-description,.world-intro-copy .world-text-link{color:#f8f0e5}
+.world-intro-description{max-width:510px;text-shadow:0 1px 14px rgba(14,9,20,.25)}
+.world-assembly-image{border:1px solid rgba(206,172,111,.65)!important;padding:9px!important;background:linear-gradient(145deg,rgba(240,223,186,.19),rgba(30,20,40,.65))!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.19),0 24px 58px rgba(20,12,27,.3)!important}
+.world-glass-caption{border:1px solid rgba(226,205,159,.57)!important;background:linear-gradient(115deg,rgba(248,242,230,.19),rgba(51,35,61,.82))!important;backdrop-filter:blur(20px) saturate(145%);box-shadow:inset 0 1px rgba(255,255,255,.28),0 12px 32px rgba(13,8,20,.3)!important}
+.world-committees{background:linear-gradient(180deg,#21162b 0%,#46354c 22%,#d9cdbb 52%,#eee7dc 87%,#261a31 100%)!important}
+.world-forum-row{border-color:rgba(157,124,69,.59)!important}
+.world-forum-row:hover{background:linear-gradient(90deg,rgba(214,187,127,.13),rgba(255,255,255,.05))}
+.world-programme{border-block:1px solid rgba(202,163,89,.65)!important;box-shadow:inset 0 1px rgba(255,255,255,.15),inset 0 -1px rgba(255,255,255,.09),0 22px 46px rgba(9,5,13,.16)}
+.world-glass-link{border:1px solid rgba(226,202,152,.64)!important;background:linear-gradient(120deg,rgba(255,255,255,.15),rgba(49,32,60,.63))!important;backdrop-filter:blur(15px);box-shadow:inset 0 1px rgba(255,255,255,.25),0 9px 23px rgba(7,4,11,.22)}
+.world-events{background:linear-gradient(180deg,#2a1e34,#49384e 14%,#d9cebe 42%,#f1e9dc 82%,#291d34)!important}
+.world-event-line{border-color:rgba(159,126,72,.64)!important}
+.world-closing{border-block:1px solid rgba(213,181,119,.72)!important}
+.world-explore,.world-register,.world-text-link,.world-forum-row,.world-event-line,.world-glass-link{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,color .3s ease!important}
+.world-explore:hover,.world-glass-link:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(8,5,12,.3),inset 0 1px rgba(255,255,255,.35)}
+
+/* Committee gallery: the generated hall sits behind the six individually lit shafts. */
+.pillars-page{background:linear-gradient(180deg,#20152a 0%,#44354a 26%,#cfc3b2 71%,#251a30 100%)!important;color:#f7f0e5!important}
+.pillars-page:before{z-index:-1!important;opacity:.65!important;background:linear-gradient(180deg,rgba(22,14,31,.25),rgba(28,18,36,.05) 38%,rgba(22,14,31,.27)),url('/images/optimized/architecture/assembly_hall-1024.avif') center 40%/cover no-repeat!important;filter:saturate(.66) brightness(.59)}
+.pillars-heading h1{color:#fff7e9!important;text-shadow:0 4px 24px rgba(9,6,12,.52)}
+.pillars-heading .eyebrow{color:#e4cb91!important}.pillars-heading>p:last-child{color:#eee2d0!important}
+.pillars-gallery:before{content:"";position:absolute;inset:10% 0 0;pointer-events:none;background:radial-gradient(ellipse at 50% 35%,rgba(255,245,221,.18),transparent 63%),linear-gradient(180deg,transparent,rgba(17,11,24,.24));}
+.pillars-grid{position:relative;align-items:stretch;perspective:1200px}
+.pillar-item{filter:drop-shadow(0 20px 17px rgba(12,8,16,.32));transition:transform .35s ease,filter .35s ease!important}
+.pillar-cap{height:48px!important;border:1px solid #a7864b!important;background:linear-gradient(180deg,#fffef8 0%,#d4c29a 26%,#fff9e9 34%,#aa8950 45%,#f9f3e5 56%,#ceb88b 72%,#f7f0e1 100%)!important;box-shadow:inset 0 1px rgba(255,255,255,.95),0 6px 9px rgba(19,12,25,.3)!important}
+.pillar-shaft{border-inline:1px solid #b49865!important;background:linear-gradient(90deg,#9b8868 0%,#ddd0b4 8%,#fffaf0 22%,#f0e6d0 41%,#fffdf7 53%,#d6c39f 72%,#f8f0df 87%,#97825e 100%)!important;box-shadow:inset 9px 0 14px rgba(71,52,30,.18),inset -8px 0 13px rgba(71,52,30,.17),0 19px 25px rgba(14,8,18,.33)!important}
+.pillar-shaft:before{inset:0 8px!important;background:repeating-linear-gradient(90deg,transparent 0 14%,rgba(112,83,45,.13) 14.5%,transparent 16% 29%),linear-gradient(90deg,rgba(246,229,190,.22),transparent 48%,rgba(107,78,41,.12))!important}
+.pillar-shaft:after{background:linear-gradient(180deg,rgba(255,255,255,.42),transparent 15% 68%,rgba(112,82,45,.11) 100%)!important}
+.pillar-shaft small{color:#806238!important}.pillar-shaft b{color:#674b28!important;text-shadow:0 1px #fff9}
+.pillar-shaft strong{padding:8px 6px;color:#34263b!important;text-shadow:0 1px 0 #fff9}
+.pillar-shaft i{border-color:#a7864b!important;background:linear-gradient(135deg,#f4e6c3,#d5bf8b)!important;color:#5a4527!important;box-shadow:inset 0 1px #fff9,0 3px 7px #51381e30}
+.pillar-base{height:38px!important;border-color:#a7864b!important;background:linear-gradient(180deg,#fffdf5,#d4c198 22%,#fff8e8 38%,#a68750 46%,#f6edd9 58%,#c7ae7c 83%,#fff8e8)!important;box-shadow:inset 0 1px rgba(255,255,255,.8),0 13px 18px rgba(15,9,20,.35)!important}
+.pillar-item:hover{transform:translateY(-7px)!important;filter:drop-shadow(0 24px 20px rgba(12,8,16,.4))!important}
+
+/* Repeated public page surfaces carry the same warm stone light with distinct tonal centres. */
+.about-page{background:linear-gradient(180deg,#21162c 0,#45364c 380px,#d3c7b7 690px,#f1eadf 100%)}
+.events-page{background:radial-gradient(ellipse at 85% 15%,rgba(162,127,72,.12),transparent 32%),linear-gradient(180deg,#1e1428,#48374e 360px,#d9cdbd 740px,#f2eadf 100%)}
+.itinerary-page{background:radial-gradient(ellipse at 72% 12%,rgba(217,188,129,.15),transparent 30%),linear-gradient(180deg,#24172e,#49364f 42%,#251a30 100%)!important}
+.itinerary-heading{border-bottom:2px double rgba(215,186,128,.7)!important}
+.itinerary-table-wrap{border:2px solid #b49459!important;box-shadow:inset 0 0 0 4px rgba(255,255,255,.58),0 23px 55px rgba(8,5,12,.34)!important}
+.secretariat-page{background:linear-gradient(180deg,#21162d 0,#4a3850 420px,#cfc3b2 770px,#f1e9dc 100%)!important}
+.secretariat-opener{border-bottom:2px solid rgba(204,171,105,.72)!important}
+.about-manifesto,.about-principles,.secretariat-gallery,.committee-detail-page>section,.events-page>section,.resources-page>section,.delegates-page>section,.contact-page>section{background-image:linear-gradient(180deg,rgba(244,235,217,.94),rgba(226,215,197,.97))}
+.about-manifesto,.about-principles,.secretariat-gallery{box-shadow:inset 0 1px rgba(255,255,255,.66)}
+.about-manifesto .manifesto-image .artwork-frame,.committee-detail-page .artwork-frame,.events-page .artwork-frame,.secretariat-page .artwork-frame,.delegates-page .artwork-frame,.contact-page .artwork-frame{border:1px solid rgba(162,128,71,.7);box-shadow:inset 0 0 0 5px rgba(248,240,224,.75),0 18px 45px rgba(25,15,32,.2)}
+.page-opener{border-bottom:2px solid rgba(204,171,105,.54)!important}
+.page-opener:after{border-color:rgba(222,198,145,.55)!important;box-shadow:inset 0 0 0 4px rgba(255,255,255,.04)}
+.page-opener-art{filter:drop-shadow(0 22px 30px rgba(7,4,11,.3))}
+.museum-footer{border-top:2px solid rgba(178,143,81,.56)!important;background:radial-gradient(ellipse at 75% 0,rgba(119,86,132,.24),transparent 40%),linear-gradient(180deg,#20162a,#130d1b)!important}
+
+@media(max-width:850px){.museum-nav{border-radius:4px 14px 4px 14px!important}.pillars-page:before{background-position:55% center!important}.pillar-item{min-height:350px}}
+@media(max-width:620px){.museum-nav{backdrop-filter:blur(21px) saturate(140%)!important}.museum-nav:before{background:linear-gradient(105deg,rgba(255,255,255,.15),transparent 42%,rgba(228,204,154,.1))}.world-hero-frame:before{inset:7px!important}.world-hero-art{filter:drop-shadow(0 12px 20px rgba(5,3,8,.18))}.pillars-page:before{background-position:58% center!important}.pillars-heading{padding-top:110px!important}.pillars-grid{gap:17px 12px!important}.pillar-item{min-height:330px!important;filter:drop-shadow(0 13px 12px rgba(12,8,16,.31))}.pillar-cap{height:34px!important}.pillar-base{height:28px!important}.pillar-shaft{padding:17px 5px 12px!important}.pillar-shaft strong{font-size:1.12rem!important}.world-assembly-image{padding:6px!important}.museum-footer{background:linear-gradient(180deg,#24182e,#130d1b)!important}}
+@media(prefers-reduced-motion:reduce){.museum-nav,.museum-nav *,.pillar-item,.world-explore,.world-glass-link{transition:none!important}}

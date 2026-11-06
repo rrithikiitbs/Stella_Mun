@@ -12,7 +12,7 @@ export function Footer() {
     <div className="footer-col"><span className="eyebrow">Explore</span><Link href="/about">The conference</Link><Link href="/committees">Committees</Link><Link href="/events">Events & activities</Link><Link href="/schedule">Itinerary</Link></div>
     <div className="footer-col"><span className="eyebrow">For delegates</span><Link href="/delegates">Delegate information</Link><Link href="/resources">Resources library</Link><Link href="/secretariat">Secretariat</Link><Link href="/contact">Contact the team</Link></div>
     <div className="footer-cta"><span className="eyebrow">Your place at the table</span><p>Be part of the conversation.</p><RegisterButton/></div>
-  </div><div className="wrap footer-bottom"><span>© 2027 Stella Maris Model United Nations</span><span>Stella Maris College <i>·</i> Chennai, India</span><BackToTop/></div></footer>;
+  </div><div className="wrap footer-bottom"><span>© PRR007 2027 Stella Maris Model United Nations</span><span>Stella Maris College <i>·</i> Chennai, India</span><BackToTop/></div></footer>;
 }
 
 export function Shell({ children }: { children: React.ReactNode }) { return <><Nav/>{children}<Footer/></>; }

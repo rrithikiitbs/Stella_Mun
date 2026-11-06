@@ -1,0 +1,96 @@
+/* Public palette and contrast corrections. Admin pages have no .museum-nav and are untouched. */
+body:has(.museum-nav){--paper:#241831;--charcoal:#f2e8f1;--ivory:#f5edf3;--ink:#130d1d;--midnight:#191020;--royal:#352048;--violet:#614578;--gold:#b99859;--champagne:#e2c780;--rule:rgba(204,171,101,.48);background:#130d1d;color:#f5edf3}
+body:has(.museum-nav) main{color:#f5edf3}
+body:has(.museum-nav) .home-world:before,body:has(.museum-nav) .about-page:before,body:has(.museum-nav) .committee-detail-page:before,body:has(.museum-nav) .events-page:before,body:has(.museum-nav) .resources-page:before,body:has(.museum-nav) .delegates-page:before,body:has(.museum-nav) .contact-page:before,body:has(.museum-nav) .not-found-page:before{background:radial-gradient(ellipse at 50% 0,rgba(126,86,151,.18),transparent 39%),radial-gradient(ellipse at 13% 40%,rgba(190,153,83,.1),transparent 28%),linear-gradient(180deg,rgba(21,13,31,.14),transparent 23%,rgba(45,31,61,.12) 55%,rgba(21,13,31,.12))!important}
+
+/* Glass highlights stay in the purple/gold family instead of fading toward ivory. */
+.museum-nav{background:linear-gradient(112deg,rgba(79,57,96,.72),rgba(57,38,73,.83) 40%,rgba(26,16,37,.9))!important}
+.museum-nav:before{background:linear-gradient(105deg,rgba(122,91,140,.24),transparent 20% 73%,rgba(201,165,95,.12)),linear-gradient(180deg,rgba(110,80,126,.18),transparent 42%)!important}
+.museum-nav.is-scrolled{background:linear-gradient(105deg,rgba(39,25,49,.95),rgba(27,17,38,.95) 64%,rgba(61,43,67,.92))!important}
+.world-glass-caption{background:linear-gradient(115deg,rgba(83,58,100,.74),rgba(51,35,61,.9))!important}
+.world-glass-link{background:linear-gradient(120deg,rgba(81,58,98,.6),rgba(49,32,60,.85))!important}
+
+/* The entire home story now moves through plum, royal purple and antique gold. */
+.world-introduction{background:radial-gradient(ellipse at 78% 24%,rgba(185,152,89,.2),transparent 34%),linear-gradient(165deg,#191020 0%,#302043 47%,#21152e 77%,#4a3451 100%)!important;color:#f5edf3!important}
+.world-intro-copy,.world-intro-copy h2,.world-intro-description,.world-intro-copy .world-text-link{color:#f5edf3!important}
+.world-intro-copy h2 i,.world-committee-heading h2 i,.world-events-head h2 i{color:#dfc47e!important}
+.world-intro-description{ text-shadow:none!important }
+.world-assembly-image{border-color:rgba(205,171,101,.78)!important;background:linear-gradient(145deg,rgba(64,43,79,.86),rgba(31,20,43,.96))!important}
+.world-data-ribbon{border-color:rgba(201,166,94,.55)!important}
+.world-data-ribbon>div{border-color:rgba(201,166,94,.43)!important}
+.world-data-ribbon>div>span{color:#dfc985!important}.world-data-ribbon b{color:#f4ebdf!important}
+.world-committees{background:radial-gradient(ellipse at 16% 0,rgba(185,152,89,.16),transparent 32%),linear-gradient(155deg,#241630 0%,#3d2851 55%,#21152d 100%)!important;color:#f5edf3!important}
+.world-committee-heading h2,.world-events-head h2{color:#f5edf3!important}
+.world-forum-name strong{color:#f5edf3!important}
+.world-programme-date{background:radial-gradient(circle,rgba(91,63,112,.68),rgba(28,18,40,.42) 66%)!important;box-shadow:inset 0 0 45px rgba(201,166,94,.12),0 0 65px rgba(185,152,89,.1)!important}
+.world-programme-date span{color:#f2d58c!important}
+.world-events{background:radial-gradient(ellipse at 8% 57%,#382648 0,transparent 35%),linear-gradient(155deg,#191020,#30203f 66%,#24162f)!important}
+.world-event-line p,.world-event-empty>p,.world-programme-content>p:not(.world-eyebrow):not(.world-section-index){color:#e0d5e4!important}
+.world-closing{background:radial-gradient(ellipse at 50% 55%,#4a3453 0,#251730 39%,#130d1d 82%)!important}
+.world-closing-light{background:linear-gradient(90deg,transparent,#c69d550d 48%,#c69d5516 50%,transparent 56%)!important}
+.world-closing h2 i{color:#e2c780!important}
+.world-bulletin{background:linear-gradient(105deg,#251732,#38234a 68%,#4a3652)!important;color:#f5edf3!important}
+.world-bulletin-items>a{color:#f5edf3!important}
+
+/* All public page openers use the dark architectural palette, including former light variants. */
+.page-opener,.page-opener.opener-light{background:linear-gradient(118deg,#160f22 0%,#2c1c3e 60%,#49334f 100%)!important;color:#f5edf3!important}
+.page-opener:before,.page-opener.opener-light:before{background:linear-gradient(90deg,#160f22 0%,#21152eeF 36%,#2a1a3899 68%,#2a1a3820),linear-gradient(0deg,#160f22 0%,transparent 42%)!important}
+.page-opener:after{border-color:rgba(220,190,121,.55)!important}
+.page-opener h1,.page-opener .opener-deck,.page-opener .opener-footer,.page-opener.opener-light .opener-deck,.page-opener.opener-light .opener-footer{color:#f5edf3!important}
+.page-opener .eyebrow{color:#e2c780!important}
+.opener-ghost-number{color:rgba(211,177,103,.06)!important}
+
+/* Dark editorial sections keep white and ivory text on plum, with restrained gold details. */
+.about-page,.events-page,.resources-page,.delegates-page,.contact-page,.committee-detail-page,.secretariat-page,.not-found-page{background:linear-gradient(160deg,#181020 0%,#2e1e40 48%,#21152d 100%)!important;color:#f5edf3!important}
+.about-manifesto,.about-principles,.committee-dossier,.event-exhibition,.archive-section,.delegate-spread,.delegate-facts,.contact-spread,.contact-baseline,.secretariat-gallery,.not-found-action{background:radial-gradient(ellipse at 82% 0,rgba(190,153,83,.12),transparent 35%),linear-gradient(145deg,#241730 0%,#352347 52%,#241730 100%)!important;color:#f5edf3!important}
+.manifesto-copy,.manifesto-copy .display-heading,.manifesto-copy .editorial-lead,.manifesto-note,.principles-head,.principles-head .display-heading,.principle h3,.principle p,.committee-dossier,.dossier-main,.dossier-main .display-heading,.dossier-theme,.dossier-main .editorial-lead,.issue-note p,.dossier-scope,.dossier-scope p,.event-exhibition-heading,.event-exhibition-heading .display-heading,.event-object-copy h3,.event-object-copy>p:not(.eyebrow),.event-footer-note,.event-footer-note a,.archive-heading,.archive-heading .display-heading,.archive-entry,.archive-description h3,.archive-description p,.archive-footnote,.delegate-brief,.delegate-brief .display-heading,.delegate-brief .editorial-lead,.delegate-facts,.delegate-facts-grid strong,.delegate-facts-link,.contact-details,.contact-details .display-heading,.contact-address,.contact-info,.contact-email,.secretariat-intro,.secretariat-intro .display-heading,.person-caption h3,.person-caption>p:last-child,.secretariat-coming,.not-found-action{color:#f5edf3!important}
+.manifesto-note,.principle p,.dossier-main .editorial-lead,.dossier-scope p,.event-object-copy>p:not(.eyebrow),.archive-description p,.delegate-brief .editorial-lead,.contact-address,.contact-info,.person-caption>p:last-child{color:#ded1e2!important}
+.eyebrow-dark,.manifesto-copy .eyebrow,.principles-head .eyebrow,.dossier-main .eyebrow,.dossier-scope .eyebrow,.event-object-copy .eyebrow,.archive-heading .eyebrow,.archive-entry .archive-classification,.delegate-brief .eyebrow,.contact-details .eyebrow,.secretariat-intro .eyebrow,.person-caption .eyebrow{color:#dfc27b!important}
+.principles-head,.principle,.event-object-copy,.archive-entry,.archive-footnote,.contact-baseline{border-color:rgba(211,176,103,.45)!important}
+.principle>span,.gallery-count,.gallery-count i{color:#dfc27b!important}
+.issue-note,.dossier-scope,.archive-entry,.archive-empty,.secretariat-coming{background:linear-gradient(135deg,#2b1b3b,#20152c)!important;border-color:rgba(204,169,99,.55)!important;color:#f5edf3!important}
+.dossier-scope p,.archive-description p,.archive-empty>p:last-child,.secretariat-coming>div>p:last-child{color:#e0d5e4!important}
+.event-object-copy h3,.archive-description h3,.person-caption h3{color:#f5edf3!important}
+.event-date-stamp,.archive-download{background:linear-gradient(120deg,#574229,#9b773b 60%,#60492a)!important;color:#fff0c4!important;border-color:#d0ae68!important}
+.delegate-facts-grid>div,.delegate-facts-link,.contact-rule,.contact-baseline{border-color:rgba(211,176,103,.45)!important}
+.delegate-facts .eyebrow,.delegate-facts-grid .eyebrow,.contact-email.pending{color:#dfc27b!important}
+.about-manifesto .image-index,.about-manifesto .image-index i{color:#dfc27b!important}
+.about-manifesto .manifesto-image .artwork-frame,.delegate-artwork .artwork-frame{box-shadow:inset 0 0 0 1px rgba(221,190,120,.4),18px 20px 0 rgba(159,120,54,.38)!important}
+.about-principles .principles-grid{border-color:rgba(211,176,103,.35)}
+.secretariat-opener{background:radial-gradient(ellipse at 72% 30%,#574065 0,transparent 39%),linear-gradient(110deg,#1c1127,#3d2a4c 68%,#261830)!important}
+.secretariat-page .secretariat-intro{color:#f5edf3!important}
+.museum-footer{background:radial-gradient(ellipse at 70% 0,rgba(183,145,76,.13),transparent 38%),linear-gradient(160deg,#241730,#120c1a)!important;color:#f5edf3!important}
+.museum-footer,.museum-footer p,.museum-footer a,.museum-footer .footer-bottom,.museum-footer .footer-col a{color:#e6dcea!important}
+.museum-footer .eyebrow,.museum-footer .footer-date,.museum-footer .footer-bottom i{color:#dfc27b!important}
+.museum-footer .footer-brand strong{color:#f7eef4!important}
+
+/* Committee pillars keep their separate stone material; ambient page light stays purple and gold. */
+.pillars-page{background:linear-gradient(145deg,#1b1127 0%,#30203f 55%,#21152d 100%)!important;color:#f5edf3!important}
+.pillars-page:before{background:linear-gradient(180deg,rgba(22,14,31,.35),rgba(28,18,36,.1) 38%,rgba(22,14,31,.42)),url('/images/optimized/architecture/assembly_hall-1024.avif') center 40%/cover no-repeat!important}
+.pillars-gallery:before{background:radial-gradient(ellipse at 50% 35%,rgba(190,153,83,.14),transparent 63%),linear-gradient(180deg,transparent,rgba(17,11,24,.3))!important}
+.pillars-heading h1{color:#fff2df!important}.pillars-heading>p:last-child{color:#e5d8e9!important}
+
+/* Home headline: exact title, metallic gold treatment and room for both lines at all sizes. */
+.world-hero h1{max-width:1000px!important;gap:7px!important;line-height:.86!important}
+html body:has(.museum-nav) .home-world .world-hero h1 span,html body:has(.museum-nav) .home-world .world-hero h1 em{display:block;color:#ddbf77!important;-webkit-text-fill-color:transparent!important;background:linear-gradient(100deg,#9d7537 0%,#e5ca85 24%,#bc9147 52%,#eed79b 74%,#a77d3b 100%)!important;background-image:linear-gradient(100deg,#9d7537 0%,#e5ca85 24%,#bc9147 52%,#eed79b 74%,#a77d3b 100%)!important;background-clip:text!important;-webkit-background-clip:text!important;text-shadow:0 5px 25px rgba(5,3,8,.72)!important}
+.world-hero h1 span{font-size:clamp(4.2rem,8.7vw,8.6rem)!important;letter-spacing:-.055em!important;white-space:nowrap}
+.world-hero h1 em{margin:0!important;font-size:clamp(3.65rem,7.15vw,7.2rem)!important;letter-spacing:-.025em!important;font-style:normal!important}
+.world-hero-content{max-width:100%!important}
+.world-hero .world-tagline{color:#f2e7dc!important}
+.world-hero-atmosphere{background:linear-gradient(90deg,#130d1df5 0%,#1b1229e8 38%,#22152f90 70%,#22152f4d 100%),linear-gradient(0deg,#130d1dcb,transparent 50%)!important}
+.world-hero-art:after{background:linear-gradient(90deg,#110b1a8c 0%,#110b1a50 32%,transparent 82%),linear-gradient(0deg,#110b1a60,transparent 40%)!important}
+.world-hero .world-hero-image{filter:brightness(.78) saturate(.76) contrast(1.08)!important;object-position:58% center!important}
+.world-hero-frame:before{border-color:rgba(220,189,118,.58)!important}
+.world-hero-frame:after{border-color:rgba(220,189,118,.2)!important}
+.museum-nav .button-disabled.nav-register{color:#21172a!important;text-shadow:none!important}
+
+@media(max-width:760px){
+  .world-hero h1{gap:11px!important}
+  .world-hero h1 span{font-size:clamp(2.35rem,9.3vw,4rem)!important;letter-spacing:-.055em!important}
+  .world-hero h1 em{font-size:clamp(2.9rem,10vw,4.4rem)!important;letter-spacing:-.02em!important}
+  .world-hero-content{padding-top:132px!important;padding-bottom:155px!important}
+  .world-hero-art{width:126%!important;right:-43%!important;top:9%!important;opacity:.77!important}
+  .world-hero .world-hero-image{object-position:56% center!important}
+}
+@media(max-width:370px){.world-hero h1 span{font-size:8.9vw!important}.world-hero h1 em{font-size:9.7vw!important}}
+@media(prefers-reduced-motion:reduce){.world-hero-art,.world-hero h1>*{animation:none!important}}

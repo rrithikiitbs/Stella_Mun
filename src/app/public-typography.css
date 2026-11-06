@@ -1,0 +1,70 @@
+/* Editorial typography and gold hierarchy for the public site only. */
+body:has(.museum-nav){font-family:"DM Sans",Arial,sans-serif;font-kerning:normal;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body:has(.museum-nav) h1,body:has(.museum-nav) h2,body:has(.museum-nav) h3,body:has(.museum-nav) h4,body:has(.museum-nav) .display-heading,body:has(.museum-nav) .serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:-.025em;text-wrap:balance}
+body:has(.museum-nav) .eyebrow,body:has(.museum-nav) .world-section-index,body:has(.museum-nav) .world-kicker,body:has(.museum-nav) .footer-date,body:has(.museum-nav) .opener-footer,body:has(.museum-nav) .footer-bottom{font-family:"DM Sans",Arial,sans-serif;font-weight:600;letter-spacing:.17em}
+body:has(.museum-nav) main h1,body:has(.museum-nav) main h2,body:has(.museum-nav) main h3,body:has(.museum-nav) main h4{color:#dec278}
+body:has(.museum-nav) main p,body:has(.museum-nav) main small,body:has(.museum-nav) main figcaption,body:has(.museum-nav) main blockquote,body:has(.museum-nav) main dt,body:has(.museum-nav) main dd{color:#cfb375}
+body:has(.museum-nav) .itinerary-empty,body:has(.museum-nav) .itinerary-empty h2,body:has(.museum-nav) .itinerary-empty p{color:#4b3a4a!important}
+.world-kicker,.world-title-signature,.world-title-signature span,.world-title-signature b,.world-hero-orientation,.world-scroll,.world-hero-index,.world-forum-index,.world-forum-name small,.world-forum-art-caption,.world-programme-date i,.world-programme-date b,.world-event-line>span,.world-event-line>b,.world-event-line>div small,.world-event-empty>span,.world-closing-coordinate,.world-closing-secondary{color:#d7ba73!important}
+.world-tagline{color:#d4b66d!important}
+.world-hero .world-tagline{color:#d4b66d!important}
+.world-hero .button-disabled.world-register{color:#24172b!important;text-shadow:none!important}
+.world-explore,.world-glass-link,.world-text-link{color:#dfc47c!important}
+.world-hero .world-explore,.world-hero .world-explore b{color:#24172b!important}
+.world-data-ribbon b,.world-glass-caption b,.world-glass-caption span,.world-programme-date span{color:#dfc47c!important}
+.event-open-icon{color:#e3c87d!important;border-color:rgba(222,194,120,.82)!important}
+.itinerary-table th{color:#e1c47a!important}
+
+/* Gold replaces white display text on purple surfaces; stone/table labels stay dark. */
+.museum-nav .nav-identity>span,.museum-nav .desktop-nav>a:not(.button),.mobile-nav>a,.mobile-nav-heading .eyebrow{color:#dec278!important}
+.museum-nav .desktop-nav>a:not(.button):hover,.museum-nav .desktop-nav>a.active,.mobile-nav>a:hover,.mobile-nav>a.active{color:#f0d995!important}
+.page-opener h1,.page-opener .eyebrow,.page-opener .opener-deck,.page-opener .opener-footer,.secretariat-opener-copy h1,.secretariat-opener-copy .eyebrow,.secretariat-opener-copy>p:last-child{color:#dfc681!important}
+.home-world .world-intro-copy h2,.home-world .world-committee-heading h2,.home-world .world-events-head h2,.home-world .world-programme-content h2,.home-world .world-closing h2{color:#dec278!important}
+.home-world .world-intro-copy h2 i,.home-world .world-committee-heading h2 i,.home-world .world-events-head h2 i,.home-world .world-programme-content h2 i,.home-world .world-closing h2 i{color:#b99450!important}
+.pillars-heading h1,.pillars-heading .eyebrow,.itinerary-heading h1,.itinerary-heading .eyebrow,.itinerary-heading>p:last-child{color:#dfc47c!important}
+.about-page .display-heading,.committee-detail-page .display-heading,.events-page .display-heading,.resources-page .display-heading,.delegates-page .display-heading,.contact-page .display-heading,.secretariat-page .display-heading,.not-found-page .display-heading{color:#dec278!important}
+.about-page .display-heading i,.committee-detail-page .display-heading i,.events-page .display-heading i,.resources-page .display-heading i,.delegates-page .display-heading i,.contact-page .display-heading i,.secretariat-page .display-heading i,.not-found-page .display-heading i{color:#b99450!important}
+.event-object-copy h3,.archive-description h3,.person-caption h3,.contact-email,.contact-details .eyebrow,.delegate-facts-link,.dossier-guide .eyebrow,.footer-col .eyebrow,.footer-cta .eyebrow{color:#dfc47c!important}
+.event-object-copy>p:not(.eyebrow),.archive-description p,.manifesto-note,.principle p,.dossier-main .editorial-lead,.dossier-scope p,.delegate-brief .editorial-lead,.contact-address,.contact-info,.person-caption>p:last-child,.world-intro-description,.world-programme-content>p:not(.world-eyebrow):not(.world-section-index),.world-event-line p,.world-event-empty>p{color:#cfb375!important}
+.museum-footer,.museum-footer p,.museum-footer a,.museum-footer .footer-bottom,.museum-footer .footer-col a,.footer-brand small{color:#cfb375!important}
+.museum-footer .footer-brand strong,.museum-footer .footer-cta>p{color:#e5cc87!important}
+.museum-nav .nav-register,.museum-nav .button-disabled.nav-register{color:#24172b!important;text-shadow:none!important}
+.button-gold,.button-gold:hover,.world-register{color:#24172b!important}
+
+/* Editorial scale: controlled size steps rather than a uniform heading treatment. */
+.world-intro-copy h2,.world-committee-heading h2,.world-events-head h2,.world-programme-content h2{font-size:clamp(3.8rem,7vw,7.4rem)!important;line-height:.88!important;letter-spacing:-.035em!important}
+.page-opener h1{font-size:clamp(3.75rem,7.7vw,8rem)!important;line-height:.86!important;letter-spacing:-.04em!important}
+.pillars-heading h1{font-size:clamp(3.2rem,6.3vw,6rem)!important;line-height:.9!important;letter-spacing:-.025em!important}
+.itinerary-heading h1{font-size:clamp(4rem,8.4vw,7.4rem)!important;line-height:.84!important;letter-spacing:-.035em!important}
+.contact-details .display-heading{font-size:clamp(4.4rem,7.2vw,7rem)!important;line-height:.84!important}
+.event-object-copy h3,.person-caption h3{line-height:.94!important;letter-spacing:-.02em!important}
+.dossier-main .display-heading,.delegate-brief .display-heading,.archive-heading .display-heading{line-height:.88!important;letter-spacing:-.035em!important}
+.world-overline{font-size:clamp(1.35rem,2.1vw,1.85rem)!important;letter-spacing:.005em!important}
+.museum-nav .desktop-nav>a:not(.button){font-size:.62rem;letter-spacing:.13em}
+.museum-nav .nav-identity{letter-spacing:.1em}
+.museum-nav .nav-identity small{letter-spacing:.2em}
+.eyebrow{font-size:.66rem;letter-spacing:.2em}
+.footer-col>a,.footer-bottom,.opener-footer,.contact-baseline,.archive-footnote,.event-footer-note{font-size:.62rem!important}
+
+/* Larger Contact art, aligned to retain the hand while excluding the source mark at right. */
+.contact-art{width:min(100%,540px)!important;max-width:540px!important;margin:0 auto!important;justify-self:center}
+.contact-art .artwork-frame{width:100%;aspect-ratio:4 / 5!important;overflow:hidden}
+.contact-art .artwork-image{object-position:left center!important;transform:scale(1.04);transform-origin:left center}
+.contact-art .artwork-frame{box-shadow:inset 0 0 0 1px rgba(221,190,120,.46),20px 22px 0 rgba(159,120,54,.35)!important}
+.contact-rule{background:#c6a45e!important}
+.contact-email svg{color:#dfc47c!important}
+
+/* Keep dark ink on light marble and the itinerary's ivory table. */
+.pillar-shaft b,.pillar-shaft strong,.itinerary-table,.itinerary-table td,.itinerary-table td strong,.itinerary-table td:nth-child(2){color:#34263b!important}
+.pillar-shaft small,.itinerary-table td:before{color:#806238!important}
+@media(max-width:900px){.contact-art{width:min(100%,520px)!important;max-width:520px!important}}
+@media(max-width:620px){
+  .contact-art{width:100%!important;max-width:520px!important;margin:0 auto!important}
+  .contact-art .artwork-image{object-position:left center!important;transform:scale(1.03);}
+  .world-intro-copy h2,.world-committee-heading h2,.world-events-head h2,.world-programme-content h2{font-size:clamp(3.5rem,14vw,5.4rem)!important}
+  .page-opener h1{font-size:clamp(3.5rem,14.5vw,5.5rem)!important}
+  .pillars-heading h1{font-size:clamp(2.9rem,12vw,4.1rem)!important}
+  .itinerary-heading h1{font-size:clamp(3.5rem,14vw,5.2rem)!important}
+  .contact-details .display-heading{font-size:clamp(4rem,15vw,5.5rem)!important}
+  .museum-nav .desktop-nav>a:not(.button){font-size:.66rem}
+}

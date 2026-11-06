@@ -16,13 +16,13 @@ export default async function Home() {
 
   return <Shell><main className="home-world">
     <section className="world-hero" id="top">
-      <div className="world-hero-art"><Artwork name="heroAlternative" priority ratio="16 / 9" sizes="100vw" position="right center" className="world-hero-artwork" imageClassName="world-hero-image" /></div>
+      <div className="world-hero-art"><Artwork name="heroClean" priority ratio="16 / 9" sizes="100vw" position="center center" className="world-hero-artwork" imageClassName="world-hero-image" /></div>
       <div className="world-hero-atmosphere" aria-hidden="true"><span className="world-orbit orbit-one"/><span className="world-orbit orbit-two"/><span className="world-light-column"/><span className="world-grid-floor"/></div>
       <div className="world-hero-frame" aria-hidden="true"/>
       <div className="world-hero-content">
         <p className="world-kicker"><span/> STELLA MARIS COLLEGE <i>·</i> CHENNAI, INDIA</p>
         <p className="world-overline">A world of diplomacy</p>
-        <h1><span>STELLA MARIS</span><em>MUN / 27</em></h1>
+        <h1 aria-label="STELLA MARIS MUN - 27"><span>STELLA MARIS</span><em>MUN - 27</em></h1>
         <div className="world-title-signature"><span>MODEL UNITED NATIONS</span><b>CHENNAI · INDIA</b></div>
         <p className="world-tagline">{site.hero_subtitle || fallbackSettings.tagline}</p>
         <div className="world-actions"><Link className="world-explore" href="/committees"><span>Explore committees</span><b>↗</b></Link><RegisterButton className="world-register"/></div>

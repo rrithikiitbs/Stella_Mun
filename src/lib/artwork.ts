@@ -1,5 +1,6 @@
 export const artwork = {
   hero: { path: "hero/hero-main", alt: "Marble figure beneath the colonnades of a classical Greek hall" },
+  heroClean: { path: "hero/hero-clean-assembly", alt: "A grand classical marble assembly hall with sculptural tiers and gold architectural details" },
   heroAlternative: { path: "hero/hero-alternative", alt: "A marble statesman in a monumental classical assembly" },
   marbleEye: { path: "hero/marble_eye_and_face", alt: "Close study of an antique marble face" },
   assembly: { path: "architecture/assembly_hall", alt: "A semicircular marble assembly hall prepared for debate" },
